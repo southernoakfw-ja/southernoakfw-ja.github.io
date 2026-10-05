@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance Quote Intake — Southern Oak Financial &amp; Wellness</title>
+<meta name="description" content="Request a life insurance quote from Southern Oak Financial & Wellness. Fill out this short intake and we will prepare your quote.">
+<link rel="stylesheet" href="styles.css?v=5">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
+      <h1>Life Insurance Quote Intake</h1>
+      <p>Interested in a life insurance quote? Fill out this short intake and we&rsquo;ll prepare your quote. There is no fee from us until you approve a policy.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <form id="quote-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-name">Full name *</label>
+            <input type="text" id="q-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="q-dob">Date of birth *</label>
+            <input type="text" id="q-dob" name="dob" placeholder="MM/DD/YYYY" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q-email">Email *</label>
+          <input type="email" id="q-email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="q-height">Height</label>
+            <input type="text" id="q-height" name="height" placeholder="Example: 5 ft 6 in">
+          </div>
+          <div class="field">
+            <label for="q-weight">Weight</label>
+            <input type="text" id="q-weight" name="weight" placeholder="Example: 160 lbs">
+          </div>
+        </div>
+
+        <fieldset class="field">
+          <legend>Tobacco or nicotine use</legend>
+          <label class="choice"><input type="radio" name="tobacco" value="Yes"> Yes</label>
+          <label class="choice"><input type="radio" name="tobacco" value="No" checked> No</label>
+        </fieldset>
+
+        <div class="field">
+          <label for="q-meds">Current medications</label>
+          <textarea id="q-meds" name="medications" rows="3" placeholder="List your current medications, or write None"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="q-conditions">Major health conditions</label>
+          <textarea id="q-conditions" name="conditions" rows="3" placeholder="List any major health conditions, or write None"></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="q-amount">Coverage amount you&rsquo;re considering</label>
+            <select id="q-amount" name="amount">
+              <option>Not sure yet</option>
+              <option>$50,000</option>
+              <option>$100,000</option>
+              <option>$250,000</option>
+              <option>$500,000</option>
+              <option>$1,000,000</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-term">Coverage type / length</label>
+            <select id="q-term" name="term">
+              <option>Not sure yet</option>
+              <option>Term — 10 years</option>
+              <option>Term — 20 years</option>
+              <option>Term — 30 years</option>
+              <option>IUL — lifetime coverage</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q-beneficiary">Who should this policy protect? (Beneficiary)</label>
+          <input type="text" id="q-beneficiary" name="beneficiary" placeholder="Example: my spouse, my children">
+        </div>
+
+        <div class="field">
+          <label for="q-notes">Anything else we should know?</label>
+          <textarea id="q-notes" name="notes" rows="3"></textarea>
+        </div>
+
+        <p class="form-error" id="quote-error" hidden>Please fill in your name, date of birth, and email so we can prepare your quote.</p>
+        <div class="buttons">
+          <button type="submit" class="btn">Submit Quote Request</button>
+        </div>
+        <p class="form-note">Sending opens your email app with this intake addressed to Southern Oak — just press send there. Prefer to write directly? Email us at <a href="mailto:supporthelpsofw@gmail.com">supporthelpsofw@gmail.com</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="reach-us">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Reach Us</h2>
+        <p>
+          Email: <a href="mailto:supporthelpsofw@gmail.com">supporthelpsofw@gmail.com</a><br>
+          Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>
+          San Antonio, TX — Proudly serving all of Texas
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('quote-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = document.getElementById('q-name').value.trim();
+  var dob = document.getElementById('q-dob').value.trim();
+  var email = document.getElementById('q-email').value.trim();
+  var err = document.getElementById('quote-error');
+  if (!name || !dob || !email) { err.hidden = false; err.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+  err.hidden = true;
+  function v(id) { return document.getElementById(id).value.trim() || '—'; }
+  var tobacco = (document.querySelector('input[name="tobacco"]:checked') || {}).value || '—';
+  var lines = [
+    'LIFE INSURANCE QUOTE INTAKE',
+    '',
+    'Full name: ' + name,
+    'Date of birth: ' + dob,
+    'Email: ' + email,
+    'Height: ' + v('q-height'),
+    'Weight: ' + v('q-weight'),
+    'Tobacco or nicotine use: ' + tobacco,
+    'Current medications: ' + v('q-meds'),
+    'Major health conditions: ' + v('q-conditions'),
+    'Coverage amount considering: ' + v('q-amount'),
+    'Coverage type / length: ' + v('q-term'),
+    'Beneficiary: ' + v('q-beneficiary'),
+    'Anything else: ' + v('q-notes')
+  ];
+  var subject = encodeURIComponent('Life Insurance Quote Request — ' + name);
+  var body = encodeURIComponent(lines.join('\n'));
+  window.location.href = 'mailto:southernoakfw@gmail.com?subject=' + subject + '&body=' + body;
+});
+</script>
+</body>
+</html>

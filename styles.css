@@ -32,7 +32,7 @@ button.btn{cursor:pointer;font-size:1rem}
 .field{margin:0 0 1.4rem;border:0;padding:0}
 .field label{display:block;font-weight:700;color:var(--olive-dark);margin-bottom:.45rem}
 .field legend{font-weight:700;color:var(--olive-dark);margin-bottom:.45rem;padding:0}
-.field input[type="text"],.field input[type="tel"],.field input[type="email"],.field textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1px solid var(--tan);border-radius:6px;background:var(--cream);color:var(--ink)}
+.field input[type="text"],.field input[type="tel"],.field input[type="email"],.field input[type="date"],.field select,.field textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1px solid var(--tan);border-radius:6px;background:var(--cream);color:var(--ink)}
 .field input:focus,.field textarea:focus{outline:2px solid var(--olive-light);outline-offset:1px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .field-row .field{margin-bottom:1.4rem}
