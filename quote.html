@@ -27,6 +27,7 @@
       <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
       <h1>Life Insurance Quote Intake</h1>
       <p>Interested in a life insurance quote? Fill out this short intake and we&rsquo;ll prepare your quote. There is no fee from us until you approve a policy.</p>
+      <p>Your quote will be sent to you by email. If you would like to move forward, I would like to schedule a 30-minute Zoom with you — just let me know below what part of the day works best for you.</p>
     </div>
   </section>
 
@@ -105,6 +106,14 @@
           <input type="text" id="q-beneficiary" name="beneficiary" placeholder="Example: my spouse, my children">
         </div>
 
+        <fieldset class="field">
+          <legend>If you would like to move forward, what part of the day works best for a 30-minute Zoom?</legend>
+          <label class="choice"><input type="radio" name="zoom-time" value="Morning (9 am–12 pm CT)"> Morning (9 am–12 pm CT)</label>
+          <label class="choice"><input type="radio" name="zoom-time" value="Afternoon (12–4 pm CT)"> Afternoon (12–4 pm CT)</label>
+          <label class="choice"><input type="radio" name="zoom-time" value="Evening (4–7 pm CT)"> Evening (4–7 pm CT)</label>
+          <label class="choice"><input type="radio" name="zoom-time" value="Not sure yet" checked> Not sure yet</label>
+        </fieldset>
+
         <div class="field">
           <label for="q-notes">Anything else we should know?</label>
           <textarea id="q-notes" name="notes" rows="3"></textarea>
@@ -146,6 +155,7 @@ document.getElementById('quote-form').addEventListener('submit', function (e) {
   err.hidden = true;
   function v(id) { return document.getElementById(id).value.trim() || '—'; }
   var tobacco = (document.querySelector('input[name="tobacco"]:checked') || {}).value || '—';
+  var zoom = (document.querySelector('input[name="zoom-time"]:checked') || {}).value || '—';
   var lines = [
     'LIFE INSURANCE QUOTE INTAKE',
     '',
@@ -160,6 +170,7 @@ document.getElementById('quote-form').addEventListener('submit', function (e) {
     'Coverage amount considering: ' + v('q-amount'),
     'Coverage type / length: ' + v('q-term'),
     'Beneficiary: ' + v('q-beneficiary'),
+    'Preferred time for a 30-minute Zoom: ' + zoom,
     'Anything else: ' + v('q-notes')
   ];
   var subject = encodeURIComponent('Life Insurance Quote Request — ' + name);
