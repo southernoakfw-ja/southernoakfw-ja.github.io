@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Southern Oak Financial &amp; Wellness logo</title>
+  <desc id="desc">A southern oak tree with deep roots inside an olive ring, in tan and rustic orange.</desc>
+  <circle cx="120" cy="120" r="114" fill="#faf6ec"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#4f5d2f" stroke-width="8"/>
+  <circle cx="120" cy="120" r="98" fill="none" stroke="#d9c29a" stroke-width="3"/>
+  <!-- canopy -->
+  <g fill="#4f5d2f">
+    <circle cx="120" cy="72" r="34"/>
+    <circle cx="88" cy="88" r="26"/>
+    <circle cx="152" cy="88" r="26"/>
+    <circle cx="70" cy="106" r="19"/>
+    <circle cx="170" cy="106" r="19"/>
+    <circle cx="103" cy="60" r="22"/>
+    <circle cx="137" cy="60" r="22"/>
+  </g>
+  <g fill="#6b7a45">
+    <circle cx="98" cy="76" r="10"/>
+    <circle cx="140" cy="70" r="9"/>
+    <circle cx="120" cy="90" r="8"/>
+    <circle cx="82" cy="100" r="7"/>
+    <circle cx="158" cy="100" r="7"/>
+  </g>
+  <g fill="#bc5a28">
+    <circle cx="110" cy="58" r="4.5"/>
+    <circle cx="146" cy="84" r="4.5"/>
+    <circle cx="92" cy="88" r="4"/>
+  </g>
+  <!-- trunk -->
+  <path d="M114 96 C116 116 117 128 118 142 L122 142 C123 128 124 116 126 96 C122 100 118 100 114 96 Z" fill="#7a4a21"/>
+  <!-- ground -->
+  <path d="M52 146 Q120 136 188 146" fill="none" stroke="#d9c29a" stroke-width="5" stroke-linecap="round"/>
+  <!-- roots -->
+  <g fill="none" stroke="#7a4a21" stroke-width="6" stroke-linecap="round">
+    <path d="M120 142 C118 156 112 166 100 174"/>
+    <path d="M120 142 C120 158 120 168 120 180"/>
+    <path d="M120 142 C122 156 128 166 140 174"/>
+    <path d="M119 150 C110 156 104 158 94 160"/>
+    <path d="M121 150 C130 156 136 158 146 160"/>
+  </g>
+</svg>
