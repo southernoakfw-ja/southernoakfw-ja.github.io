@@ -80,3 +80,6 @@ footer a{color:var(--tan-light)}
 .starter-kit{border:2px solid var(--rust,#b4552d)}
 .starter-kit .note{font-size:.92rem;opacity:.85}
 .service h4{color:var(--olive-dark);font-size:1.15rem;margin:1.3rem 0 .5rem}
+.ssa-one p,.ssa-one li{font-size:.93rem;line-height:1.5}
+.ssa-one ul{margin:.3rem 0 .9rem}
+.ssa-one .buttons{margin:.4rem 0 .9rem}
