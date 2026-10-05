@@ -79,3 +79,4 @@ footer a{color:var(--tan-light)}
 .service-video{display:block;width:100%;max-width:340px;margin:1rem auto 0;border-radius:12px;background:#000}
 .starter-kit{border:2px solid var(--rust,#b4552d)}
 .starter-kit .note{font-size:.92rem;opacity:.85}
+.service h4{color:var(--olive-dark);font-size:1.15rem;margin:1.3rem 0 .5rem}
