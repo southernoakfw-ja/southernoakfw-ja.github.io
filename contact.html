@@ -51,6 +51,37 @@
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="form-card">
+        <h2>What Can We Do to Improve?</h2>
+        <p>Your feedback helps Southern Oak serve families better. Tell us what worked well, what we could do better, and what you would like to see from us — every comment is read and appreciated.</p>
+        <form id="feedback-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name (optional)</label>
+            <input id="f-name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-topic">What is your feedback about?</label>
+            <select id="f-topic">
+              <option>Our services</option>
+              <option>Our website</option>
+              <option>Our worksheets, kits, or videos</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-comments">Your comments</label>
+            <textarea id="f-comments" rows="5" placeholder="What can we do to improve?"></textarea>
+          </div>
+          <p class="form-error" id="feedback-error" hidden>Please write a comment before sending.</p>
+          <button class="btn" type="submit">Send Feedback</button>
+        </form>
+        <p class="note">Sending opens your email app addressed to supporthelpsofw@gmail.com — just press send there. Thank you for helping us improve.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 
@@ -68,5 +99,24 @@
     </div>
   </div>
 </footer>
+<script>
+document.getElementById('feedback-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var v = function (id) { return document.getElementById(id).value.trim(); };
+  var err = document.getElementById('feedback-error');
+  if (!v('f-comments')) { err.hidden = false; return; }
+  err.hidden = true;
+  var body = [
+    'Name: ' + (v('f-name') || 'Not provided'),
+    'Topic: ' + v('f-topic'),
+    '',
+    'Comments:',
+    v('f-comments')
+  ].join('\n');
+  var subject = 'Feedback for Southern Oak — ' + v('f-topic');
+  window.location.href = 'mailto:supporthelpsofw@gmail.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
