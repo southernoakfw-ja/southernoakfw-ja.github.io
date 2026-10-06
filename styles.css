@@ -83,3 +83,5 @@ footer a{color:var(--tan-light)}
 .ssa-one p,.ssa-one li{font-size:.93rem;line-height:1.5}
 .ssa-one ul{margin:.3rem 0 .9rem}
 .ssa-one .buttons{margin:.4rem 0 .9rem}
+.rx-check{margin:.6rem 0 1rem}
+.rx-check input{width:100%;max-width:420px;padding:.55rem .7rem;border:1px solid #B9AFA0;border-radius:6px;font-size:1rem;margin:.35rem 0 .6rem;background:#fff}
