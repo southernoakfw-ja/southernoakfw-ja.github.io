@@ -51,6 +51,62 @@
   <section class="section">
     <div class="wrap">
       <div class="form-card">
+        <h2>Send Us a Referral</h2>
+        <p>Need further assistance with our services — or know someone who does? Send us a referral and we&rsquo;ll reach out the way you prefer.</p>
+        <form id="referral-form" novalidate>
+          <div class="field">
+            <label for="r-name">Name *</label>
+            <input id="r-name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="r-phone">Phone number *</label>
+            <input id="r-phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="r-email">Email address *</label>
+            <input id="r-email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="r-service">Service interested in</label>
+            <select id="r-service">
+              <option>SSA Process of Application</option>
+              <option>Life Insurance</option>
+              <option>Medication Assistance</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-referredby">Referred by</label>
+            <input id="r-referredby" type="text">
+          </div>
+          <div class="field">
+            <label for="r-contactpref">How do you prefer we contact you?</label>
+            <select id="r-contactpref">
+              <option>Text</option>
+              <option>Phone call</option>
+              <option>Email</option>
+              <option>All</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-timepref">Best time to contact</label>
+            <select id="r-timepref">
+              <option>Morning</option>
+              <option>Day</option>
+              <option>Evening</option>
+            </select>
+          </div>
+          <p class="form-error" id="referral-error" hidden>Please add a name, phone number, and email address before sending.</p>
+          <button class="btn" type="submit">Send Referral</button>
+        </form>
+        <p class="note">Sending opens your email app addressed to supporthelpsofw@gmail.com — just press send there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="form-card">
         <h2>What Can We Do to Improve?</h2>
         <p>Your feedback helps Southern Oak serve families better. Tell us what worked well, what we could do better, and what you would like to see from us — every comment is read and appreciated.</p>
         <form id="feedback-form" novalidate>
@@ -110,6 +166,27 @@ document.getElementById('feedback-form').addEventListener('submit', function (e)
     v('f-comments')
   ].join('\n');
   var subject = 'Feedback for Southern Oak — ' + v('f-topic');
+  window.location.href = 'mailto:supporthelpsofw@gmail.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+<script>
+document.getElementById('referral-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var v = function (id) { return document.getElementById(id).value.trim(); };
+  var err = document.getElementById('referral-error');
+  if (!v('r-name') || !v('r-phone') || !v('r-email')) { err.hidden = false; return; }
+  err.hidden = true;
+  var body = [
+    'Name: ' + v('r-name'),
+    'Phone number: ' + v('r-phone'),
+    'Email address: ' + v('r-email'),
+    'Service interested in: ' + v('r-service'),
+    'Referred by: ' + (v('r-referredby') || 'Not provided'),
+    'Preferred contact: ' + v('r-contactpref'),
+    'Best time to contact: ' + v('r-timepref')
+  ].join('\n');
+  var subject = 'Referral for Southern Oak \u2014 ' + v('r-name');
   window.location.href = 'mailto:supporthelpsofw@gmail.com?subject=' +
     encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 });
