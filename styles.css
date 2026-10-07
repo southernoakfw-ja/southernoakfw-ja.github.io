@@ -85,3 +85,10 @@ footer a{color:var(--tan-light)}
 .ssa-one .buttons{margin:.4rem 0 .9rem}
 .rx-check{margin:.6rem 0 1rem}
 .rx-check input{width:100%;max-width:420px;padding:.55rem .7rem;border:1px solid #B9AFA0;border-radius:6px;font-size:1rem;margin:.35rem 0 .6rem;background:#fff}
+
+/* Learn more expanders */
+details.learn-more{margin:10px 0}
+details.learn-more>summary{cursor:pointer;font-weight:700;color:#7a4a21;list-style:none}
+details.learn-more>summary::-webkit-details-marker{display:none}
+details.learn-more>summary::before{content:"\25B8  "}
+details.learn-more[open ]>summary::before{content:"\25BE  "}
