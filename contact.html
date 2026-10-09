@@ -117,6 +117,31 @@
   <section class="section">
     <div class="wrap">
       <div class="form-card">
+        <h2>Leave Us a Comment on Our Customer Service</h2>
+        <p>Did we help your family? Tell us about your experience with our customer service — we read every comment, and we thank you for sharing.</p>
+        <form id="comment-form" novalidate>
+          <div class="field">
+            <label for="c-name">Your name (optional)</label>
+            <input id="c-name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="c-email">Your email (optional)</label>
+            <input id="c-email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="c-comments">Your comment about our customer service</label>
+            <textarea id="c-comments" rows="5" placeholder="Tell us how we did..."></textarea>
+          </div>
+          <p class="form-error" id="comment-error" hidden>Please write a comment before sending.</p>
+          <button class="btn" type="submit">Send Comment</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="form-card">
         <h2>What Can We Do to Improve?</h2>
         <p>Your feedback helps Southern Oak serve families better. Tell us what worked well, what we could do better, and what you would like to see from us — every comment is read and appreciated.</p>
         <form id="feedback-form" novalidate>
@@ -161,6 +186,24 @@
   </div>
 </footer>
 <script>
+document.getElementById('comment-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var v = function (id) { return document.getElementById(id).value.trim(); };
+  var err = document.getElementById('comment-error');
+  if (!v('c-comments')) { err.hidden = false; return; }
+  err.hidden = true;
+  var body = [
+    'Name: ' + (v('c-name') || '(not given)'),
+    'Email: ' + (v('c-email') || '(not given)'),
+    '',
+    'Comment about our customer service:',
+    v('c-comments')
+  ].join('\n');
+  var subject = 'Customer Service Comment — ' + (v('c-name') || 'Website Visitor');
+  window.location.href = 'mailto:southernoakfw@gmail.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+
 document.getElementById('feedback-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var v = function (id) { return document.getElementById(id).value.trim(); };
