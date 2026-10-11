@@ -42,7 +42,7 @@
 <section class="section">
 <div class="wrap">
 <div class="intake">
-<form action="https://formsubmit.co/southernoakfw@gmail.com" method="POST">
+<form id="bookingForm" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="New Booking Intake — Southern Oak">
 <input type="hidden" name="_next" value="https://calendly.com/southernoakfw/initial-consultation">
 <input type="hidden" name="_template" value="table">
@@ -112,5 +112,31 @@
   </div>
 </footer>
 <div class="notice" role="note" aria-label="Disclaimer"><strong>DISCLAIMER:</strong> We do not provide refunds for services; there is NO guarantee of approvals, and we are not legal attorneys.</div>
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  var data = {};
+  new FormData(form).forEach(function (value, key) {
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function (res) {
+    if (res.ok) {
+      window.location.href = 'https://calendly.com/southernoakfw/initial-consultation';
+    } else { throw new Error('send failed'); }
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Submit \u2014 Then Book My Zoom Time';
+    form.submit();
+  });
+});
+</script>
 </body>
 </html>
