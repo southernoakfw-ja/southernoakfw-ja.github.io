@@ -158,50 +158,61 @@
     </div>
   </section>
 
-  <section class="section">
+    <section class="section">
     <div class="wrap">
-      <h2>Square Pay Links — Every Service (Office Only)</h2>
-      <p class="note">Click a button to open that service&rsquo;s Square pay link. Prices follow the employee guide above — pick the family&rsquo;s income level. Square adds its 3.5% service charge at checkout.</p>
-      <div class="cards">
-        <article class="card">
+      <h2>Square Pay Links — Pick a Service Tab (Office Only)</h2>
+      <p class="note">Tap the service tab, pick the family&rsquo;s income level, and click the price — that opens the Square pay link to send the client. Prices follow the employee guide above. Square adds its 3.5% service charge at checkout.</p>
+      <style>
+        .sq-tabs{margin-top:10px}
+        .sq-tabs>input{position:absolute;opacity:0;pointer-events:none}
+        .sq-tabs>label{display:inline-block;padding:10px 16px;margin:0 6px 10px 0;border:2px solid #556b2f;border-radius:999px;font-weight:700;cursor:pointer;background:#fff;color:#33401c}
+        .sq-tabs>input:checked+label{background:#b4551f;border-color:#b4551f;color:#fff}
+        .sq-panel{display:none;border:1px solid #ddd3c0;border-radius:12px;padding:18px;background:#fffdf8}
+        #sqt1:checked~.sqp1,#sqt2:checked~.sqp2,#sqt3:checked~.sqp3,#sqt4:checked~.sqp4,#sqt5:checked~.sqp5{display:block}
+        .sq-panel h3{margin-top:0}
+      </style>
+      <div class="sq-tabs">
+        <input type="radio" name="sqtab" id="sqt1" checked><label for="sqt1">Personal Plan</label>
+        <input type="radio" name="sqtab" id="sqt2"><label for="sqt2">SSA Filing Help</label>
+        <input type="radio" name="sqtab" id="sqt3"><label for="sqt3">SSA Packages $50</label>
+        <input type="radio" name="sqtab" id="sqt4"><label for="sqt4">Credit Repair</label>
+        <input type="radio" name="sqtab" id="sqt5"><label for="sqt5">Medication Help</label>
+        <div class="sq-panel sqp1">
           <h3>Personal Plan — Paid 50/50</h3>
           <p>Use the same half-payment link twice: first half at signing, second half before the plan is provided.</p>
           <p><a class="btn" href="https://square.link/u/3Z7MTJeX" target="_blank" rel="noopener">Low Income — Half $99.50</a></p>
           <p><a class="btn" href="https://square.link/u/W93FjIeP" target="_blank" rel="noopener">Median Income — Half $199.50</a></p>
-        </article>
-        <article class="card">
+        </div>
+        <div class="sq-panel sqp2">
           <h3>SSA Filing Help</h3>
-          <p>Steps given, client files, Jessica guides on Zoom — up to 4 hours included.</p>
+          <p>Steps given, client files, Jessica guides on Zoom — up to 4 hours included until the filing is complete. Extra time $10 per 30 minutes.</p>
           <p><a class="btn" href="https://square.link/u/z0ePDOov" target="_blank" rel="noopener">Low Income — $25</a></p>
           <p><a class="btn" href="https://square.link/u/ZzGrQ2MH" target="_blank" rel="noopener">Median Income — $50</a></p>
-        </article>
-        <article class="card">
+        </div>
+        <div class="sq-panel sqp3">
           <h3>SSA Complete Packages — $50 for Everyone</h3>
-          <p>Self-guided packet: worksheet, steps, and the delivery page after payment.</p>
+          <p>Self-guided packet: worksheet, steps, and the delivery page right after payment.</p>
           <p><a class="btn" href="https://square.link/u/txkecQHr" target="_blank" rel="noopener">Child Package — $50</a></p>
           <p><a class="btn" href="https://square.link/u/vddqPkl3" target="_blank" rel="noopener">Adult Package — $50</a></p>
-        </article>
-        <article class="card">
-          <h3>Credit Analysis + First Dispute</h3>
-          <p>A simple budget setup is included. Collect when the analysis and first dispute are delivered.</p>
+        </div>
+        <div class="sq-panel sqp4">
+          <h3>Credit Repair</h3>
+          <p><strong>Credit Analysis + First Dispute</strong> (simple budget setup included — collect when the analysis and first dispute are delivered):</p>
           <p><a class="btn" href="https://square.link/u/KjL7IAGs" target="_blank" rel="noopener">Low Income — $75</a></p>
           <p><a class="btn" href="https://square.link/u/kHEUkpta" target="_blank" rel="noopener">Median Income — $150</a></p>
-        </article>
-        <article class="card">
-          <h3>Essential Repair — Monthly</h3>
-          <p>Ongoing credit help after the analysis. Cancel anytime.</p>
+          <p><strong>Essential Repair — monthly</strong>, cancel anytime:</p>
           <p><a class="btn" href="https://square.link/u/8DM1KLR0" target="_blank" rel="noopener">Low Income — $49/month</a></p>
           <p><a class="btn" href="https://square.link/u/0PMhlBXK" target="_blank" rel="noopener">Median Income — $89/month</a></p>
           <p class="note">Jose Chavez Guerra only: <a href="https://square.link/u/Rp0LzKal" target="_blank" rel="noopener">$89 link (Rp0LzKal)</a> — send only after his Round 2 is mailed and copies are in his hands.</p>
-        </article>
-        <article class="card">
-          <h3>Medication Application Help</h3>
-          <p>The medication check is free for everyone. Hands-on help filling the assistance application:</p>
+        </div>
+        <div class="sq-panel sqp5">
+          <h3>Medication Help</h3>
+          <p>The medication check is <strong>free for everyone</strong>. Hands-on help filling the assistance application:</p>
           <p><strong>Low Income — FREE</strong> (no link needed)</p>
           <p><a class="btn" href="https://square.link/u/bM90YbOx" target="_blank" rel="noopener">Median Income — $25</a></p>
-        </article>
+        </div>
       </div>
-      <p class="note">Always free — no pay link: first consultation, the Review (results page), the medication check, and the life insurance talk. Old package links (Package 1/2/3) and all retired links are deactivated — do not use them.</p>
+      <p class="note">Always free — no pay link: first consultation, the Review (results page), the medication check, and the life insurance talk. The old Package 1/2/3 links and all retired links are deactivated — do not use them.</p>
     </div>
   </section>
 
