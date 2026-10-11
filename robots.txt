@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /office.html
+Disallow: /advocate.html
+Disallow: /delivery-child.html
+Disallow: /delivery-adult.html
+Disallow: /thanks.html
+
+Sitemap: https://southernoakfw.org/sitemap.xml
