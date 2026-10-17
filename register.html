@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Free Zoom Class Oct 30 — Southern Oak Financial &amp; Wellness</title>
+<meta name="description" content="Register for the free Zoom class: No Tricks, Just Clear Steps — SSI, SSDI & DAC Basics for Families. Friday, October 30, 2026, 6:30 PM CT. Only 20 spots.">
+<link rel="stylesheet" href="styles.css?v=9">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z7DJGPRVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Z7DJGPRVX');
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="referral.html">Send a Referral</a>
+      <a href="book.html">Book Your Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
+      <h1>No Tricks, Just Clear Steps</h1>
+      <p><strong>SSI, SSDI &amp; DAC Basics for Families</strong> — a free Zoom class with Jessica Alvarez.</p>
+      <p><strong>Friday, October 30, 2026 · 6:30–7:15 PM CT · Live on Zoom</strong></p>
+      <p>Applying for SSA benefits can feel confusing, scary, and overwhelming. This class breaks it down in simple words — what SSI, SSDI, and DAC are, who qualifies to file, tips that help, and what Southern Oak can do for your family.</p>
+      <p><strong>Only 20 spots.</strong> Register below and you will get your Zoom link right away — and you can add the class to your calendar so you don't forget.</p>
+      <p>It's the day before Halloween — friendly costumes are welcome on camera, never required.</p>
+    </div>
+  </section>
+<section class="section">
+<div class="wrap">
+<div class="intake">
+<form id="classForm" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Class Registration — Oct 30 SSI/SSDI/DAC Class">
+<input type="hidden" name="_next" value="https://southernoakfw.org/class-registered.html">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<h2>Save Your Spot</h2>
+<div class="field-row">
+<div class="field"><label for="f-full_name">Your full name *</label><input type="text" id="f-full_name" name="full_name" required></div>
+<div class="field"><label for="f-email">Your email *</label><input type="email" id="f-email" name="email" required></div>
+</div>
+<div class="field-row">
+<div class="field"><label for="f-phone">Your phone (optional)</label><input type="tel" id="f-phone" name="phone"></div>
+<div class="field"><label for="f-city">City you live in *</label><input type="text" id="f-city" name="city" required></div>
+</div>
+<div class="field-row">
+<div class="field"><label for="f-class_for">Who is this class for? *</label><select id="f-class_for" name="class_for" required><option value="">Please choose…</option><option value="My child (under 18)">My child (under 18)</option><option value="My young adult (18-26)">My young adult (18–26)</option><option value="Myself">Myself</option><option value="Another family member">Another family member</option></select></div>
+<div class="field"><label for="f-language">Language</label><select id="f-language" name="language"><option value="">Please choose…</option><option value="English">English</option><option value="Spanish">Spanish</option></select></div>
+</div>
+<div class="field"><label for="f-hope">Anything you hope to learn? (optional)</label><textarea id="f-hope" name="hope_to_learn" rows="3"></textarea></div>
+<button type="submit" class="btn">Register — Get My Zoom Link</button>
+<p>When you click Register, your information goes to Jessica, and you will go straight to a page with your Zoom link and calendar buttons. Open to families in San Antonio, the Rio Grande Valley &amp; surrounding cities.</p>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer id="reach-us">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Southern Oak Financial &amp; Wellness</h2>
+        <p>
+          Email: <a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a><br>
+          Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>
+          San Antonio, TX — Serving San Antonio, the Rio Grande Valley &amp; surrounding cities
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="notice" role="note" aria-label="Disclaimer"><strong>DISCLAIMER:</strong> We do not provide refunds for services; there is NO guarantee of approvals, and we are not legal attorneys.</div>
+<script>
+document.getElementById('classForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Saving your spot...';
+  var data = {};
+  new FormData(form).forEach(function (value, key) {
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function (res) {
+    if (res.ok) {
+      window.location.href = 'https://southernoakfw.org/class-registered.html';
+    } else { throw new Error('send failed'); }
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Register — Get My Zoom Link';
+    form.submit();
+  });
+});
+</script>
+</body>
+</html>
