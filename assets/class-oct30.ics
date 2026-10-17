@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Southern Oak Financial & Wellness//Free Class//EN
+BEGIN:VEVENT
+UID:sofw-class-20261030@southernoakfw.org
+DTSTAMP:20261017T150000Z
+DTSTART:20261030T233000Z
+DTEND:20261031T001500Z
+SUMMARY:Free Zoom Class - No Tricks, Just Clear Steps: SSI, SSDI & DAC Basics for Families
+DESCRIPTION:Join on Zoom: https://zoom.us/j/3185981850 (Meeting ID: 318 598 1850, Passcode: 878063). With Jessica Alvarez, Southern Oak Financial & Wellness.
+LOCATION:Zoom
+END:VEVENT
+END:VCALENDAR
