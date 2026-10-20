@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Southern Oak Financial & Wellness//Free Class//EN
+BEGIN:VEVENT
+UID:sofw-class-20261113@southernoakfw.org
+DTSTAMP:20261020T020000Z
+DTSTART:20261114T003000Z
+DTEND:20261114T011500Z
+SUMMARY:Free Zoom Webinar - Thankful Hearts, Clear Steps: Help for Parents & Caregivers
+DESCRIPTION:Join on Zoom: https://zoom.us/j/3185981850 (Meeting ID: 318 598 1850, Passcode: 878063). With Jessica Alvarez, Southern Oak Financial & Wellness.
+LOCATION:Zoom
+END:VEVENT
+END:VCALENDAR
