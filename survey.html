@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rate Your Experience — Southern Oak Financial &amp; Wellness</title>
+<meta name="description" content="A one-minute survey for Southern Oak clients — rate your experience and leave a comment.">
+<link rel="stylesheet" href="styles.css?v=9">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z7DJGPRVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Z7DJGPRVX');
+</script>
+<style>
+  .stars label{display:block;background:#fff;border:2px solid #d8cfb8;border-radius:10px;padding:10px 14px;margin:0 0 8px 0;font-weight:600;cursor:pointer}
+  .stars input{margin-right:8px}
+  .yesno label{display:inline-block;background:#fff;border:2px solid #d8cfb8;border-radius:999px;padding:8px 18px;margin:0 8px 6px 0;font-weight:600;cursor:pointer}
+  .yesno input{margin-right:6px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="referral.html">Send a Referral</a>
+      <a href="book.html">Book Your Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
+      <h1>How Did I Do?</h1>
+      <p><strong>Thank you for trusting me with your family.</strong></p>
+      <p>This short survey takes about one minute. Your answers help me do better — and help other families like yours.</p>
+    </div>
+  </section>
+<section class="section">
+<div class="wrap">
+<div class="intake">
+<form id="surveyForm" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Client Survey — Rating & Comment">
+<input type="hidden" name="_next" value="https://southernoakfw.org/survey-thanks.html">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<h2>Rate Your Experience</h2>
+<div class="field"><label for="f-first_name">Your first name *</label><input type="text" id="f-first_name" name="first_name" required></div>
+<div class="field"><label for="f-service">Which service did you use? *</label><select id="f-service" name="service_used" required><option value="">Please choose…</option><option value="Personal Plan">Personal Plan</option><option value="SSA help">SSA help</option><option value="Medication help">Medication help</option><option value="Budget help">Budget help</option><option value="Life insurance talk">Life insurance talk</option><option value="Something else">Something else</option></select></div>
+<div class="field stars"><span style="display:block;font-weight:700;margin-bottom:8px">⭐ Your rating *</span>
+<label><input type="radio" name="rating" value="5 — Very happy" required>⭐⭐⭐⭐⭐&nbsp; 5 — Very happy</label>
+<label><input type="radio" name="rating" value="4 — Happy">⭐⭐⭐⭐&nbsp; 4 — Happy</label>
+<label><input type="radio" name="rating" value="3 — Okay">⭐⭐⭐&nbsp; 3 — Okay</label>
+<label><input type="radio" name="rating" value="2 — Not so happy">⭐⭐&nbsp; 2 — Not so happy</label>
+<label><input type="radio" name="rating" value="1 — Not happy">⭐&nbsp; 1 — Not happy</label>
+</div>
+<div class="field"><label for="f-comment">💬 Your comment — what helped you, or what could I do better?</label><textarea id="f-comment" name="comment" rows="4" placeholder="Write a few words here…"></textarea></div>
+<div class="field yesno"><span style="display:block;font-weight:700;margin-bottom:8px">👍 Would you tell a friend or family member about me?</span>
+<label><input type="radio" name="tell_a_friend" value="Yes">Yes</label>
+<label><input type="radio" name="tell_a_friend" value="No">No</label>
+</div>
+<div class="field yesno"><span style="display:block;font-weight:700;margin-bottom:8px">✍️ Can I share your comment to help other families? (First name only)</span>
+<label><input type="radio" name="share_my_words" value="Yes">Yes</label>
+<label><input type="radio" name="share_my_words" value="No">No</label>
+</div>
+<button type="submit" class="btn">Send My Answers</button>
+<p>When you click Send, your answers go straight to Jessica at Southern Oak Financial &amp; Wellness.</p>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer id="reach-us">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Southern Oak Financial &amp; Wellness</h2>
+        <p>
+          Email: <a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a><br>
+          Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>
+          San Antonio, TX — Serving San Antonio, the Rio Grande Valley &amp; surrounding cities
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="notice" role="note" aria-label="Disclaimer"><strong>DISCLAIMER:</strong> We do not provide refunds for services; there is NO guarantee of approvals, and we are not legal attorneys.</div>
+<script>
+document.getElementById('surveyForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  var data = {};
+  new FormData(form).forEach(function (value, key) {
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function (res) {
+    if (res.ok) {
+      window.location.href = 'https://southernoakfw.org/survey-thanks.html';
+    } else { throw new Error('send failed'); }
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Send My Answers';
+    form.submit();
+  });
+});
+</script>
+</body>
+</html>
