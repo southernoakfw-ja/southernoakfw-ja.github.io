@@ -49,7 +49,7 @@
 <section class="section">
 <div class="wrap">
 <div class="intake">
-<form id="surveyForm" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST">
+<form id="surveyForm" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="_subject" value="New Client Survey — Rating & Comment">
 <input type="hidden" name="_next" value="https://southernoakfw.org/survey-thanks.html">
 <input type="hidden" name="_template" value="table">
@@ -65,6 +65,12 @@
 <label><input type="radio" name="rating" value="1 — Not happy">⭐&nbsp; 1 — Not happy</label>
 </div>
 <div class="field"><label for="f-comment">💬 Your comment — what helped you, or what could I do better?</label><textarea id="f-comment" name="comment" rows="4" placeholder="Write a few words here…"></textarea></div>
+<div class="field"><label for="f-story">📖 Share your story (only if you want to) — Tell us a little about yourself: what struggles did you face, and what did Southern Oak help you through?</label><textarea id="f-story" name="your_story" rows="6" placeholder="Write your story here, in your own words…"></textarea></div>
+<div class="field"><label for="f-photo">📷 Share a picture of yourself (only if you want to) — a photo of you, or you with your family</label><input type="file" id="f-photo" name="attachment" accept="image/*"></div>
+<div class="field yesno"><span style="display:block;font-weight:700;margin-bottom:8px">🤝 Can I share your story and picture with our community — on our website and social media? (First name only)</span>
+<label><input type="radio" name="share_story_and_photo" value="Yes">Yes</label>
+<label><input type="radio" name="share_story_and_photo" value="No">No</label>
+</div>
 <div class="field yesno"><span style="display:block;font-weight:700;margin-bottom:8px">👍 Would you tell a friend or family member about me?</span>
 <label><input type="radio" name="tell_a_friend" value="Yes">Yes</label>
 <label><input type="radio" name="tell_a_friend" value="No">No</label>
@@ -103,6 +109,11 @@ document.getElementById('surveyForm').addEventListener('submit', function (e) {
   var btn = form.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.textContent = 'Sending...';
+  var photo = document.getElementById('f-photo');
+  if (photo && photo.files && photo.files.length > 0) {
+    form.submit();
+    return;
+  }
   var data = {};
   new FormData(form).forEach(function (value, key) {
     if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
