@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Repair Intake — Southern Oak Financial & Wellness</title>
+<meta name="description" content="Credit repair intake for Southern Oak: upload the items you need to start.">
+<link rel="stylesheet" href="styles.css?v=9">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z7DJGPRVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Z7DJGPRVX');
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book</a>
+      <a href="about.html">About Us</a>
+      <a href="referral.html">Send a Referral</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" style="padding:2.2rem 0 1.6rem">
+    <div class="wrap">
+      <h1 style="font-size:1.9rem">Credit Repair Intake</h1>
+      <p style="font-size:1.05rem;line-height:1.75">Fill out this form and upload the items you need. When you click Send, your form goes straight to Jessica.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:.4rem">
+    <div class="wrap">
+      <form class="intake" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Credit Repair Intake — Southern Oak">
+        <input type="hidden" name="_next" value="https://southernoakfw.org/thanks.html">
+        <input type="hidden" name="_template" value="table">
+        <h2 style="font-size:1.3rem;margin-top:0">About You</h2>
+        <div class="field-row"><div class="field"><label for="cname">Full name *</label><input id="cname" name="Full Name" type="text" required></div>
+        <div class="field"><label for="cemail">Email *</label><input id="cemail" name="Email" type="email" required></div></div>
+        <div class="field-row"><div class="field"><label for="cphone">Phone *</label><input id="cphone" name="Phone" type="tel" required></div>
+        <div class="field"><label for="ccity">City &amp; State</label><input id="ccity" name="City and State" type="text"></div></div>
+        <h2 style="font-size:1.3rem">Upload the Items You Need</h2>
+        <p style="font-size:1rem;line-height:1.7">Credit repair is <strong>$149.00 + 3.5% fee = $154.22 total</strong>. Pay on the Services page, then send these items. The full list is here: <a href="assets/Credit-Repair-What-You-Need-to-Start.pdf">What You Need to Start (PDF)</a>.</p>
+        <div class="field"><label for="fid">Photo ID (driver's license or state ID) *</label><input id="fid" name="Photo ID" type="file" accept="image/*,.pdf" required></div>
+        <div class="field"><label for="fss">Social Security card *</label><input id="fss" name="Social Security Card" type="file" accept="image/*,.pdf" required></div>
+        <div class="field"><label for="faddr">Proof of address (a bill with your name and address) *</label><input id="faddr" name="Proof of Address" type="file" accept="image/*,.pdf" required></div>
+        <div class="field"><label for="fexp">Credit report — Experian</label><input id="fexp" name="Credit Report Experian" type="file" accept="image/*,.pdf"></div>
+        <div class="field"><label for="feq">Credit report — Equifax</label><input id="feq" name="Credit Report Equifax" type="file" accept="image/*,.pdf"></div>
+        <div class="field"><label for="ftu">Credit report — TransUnion</label><input id="ftu" name="Credit Report TransUnion" type="file" accept="image/*,.pdf"></div>
+        <div class="field"><label for="flet">Collector letters (if you have any)</label><input id="flet" name="Collector Letters" type="file" accept="image/*,.pdf"></div>
+        <div class="field"><label for="cnotes">Anything we should know?</label><textarea id="cnotes" name="Notes" rows="3"></textarea></div>
+        <p style="font-size:.95rem;line-height:1.65">If an upload does not work, you can email your items to <strong>southernoakfw@gmail.com</strong> instead.</p>
+        <p style="font-size:.95rem;line-height:1.65"><strong>Rules:</strong> Do not pay late. Do not let a store check your credit to buy something. Do not take out new loans. If you do, we must stop your service. No refund for work already done.</p>
+        <button class="btn" type="submit">Send My Intake</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer id="reach-us">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Southern Oak Financial &amp; Wellness</h2>
+        <p>
+          Email: <a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a><br>
+          Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>
+          San Antonio, TX — Serving San Antonio, the Rio Grande Valley & surrounding cities
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="notice" role="note" aria-label="Disclaimer">Please know: We do not give refunds. We can not promise you will be approved. We are not lawyers.</div>
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  var data = {};
+  new FormData(form).forEach(function (value, key) {
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function (res) {
+    if (res.ok) {
+      window.location.href = 'https://calendly.com/southernoakfw/initial-consultation';
+    } else { throw new Error('send failed'); }
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Submit \u2014 Then Book My Zoom Time';
+    form.submit();
+  });
+});
+</script>
+</body>
+</html>

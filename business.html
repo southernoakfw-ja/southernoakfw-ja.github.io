@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Businesses — Southern Oak Financial & Wellness</title>
+<meta name="description" content="Businesses can sponsor a free parent class or a family's help at Southern Oak. Tell us about your business and upload your logo.">
+<link rel="stylesheet" href="styles.css?v=9">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z7DJGPRVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Z7DJGPRVX');
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book</a>
+      <a href="about.html">About Us</a>
+      <a href="referral.html">Send a Referral</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" style="padding:2.2rem 0 1.6rem">
+    <div class="wrap">
+      <h1 style="font-size:1.9rem">For Businesses</h1>
+      <p style="font-size:1.05rem;line-height:1.75">Your business can help local families — and we thank you in public. Fill out this form and upload your logo.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:.4rem">
+    <div class="wrap">
+      <div style="background:#FAF6EC;border:3px solid #BC5A28;border-radius:14px;padding:1rem 1.1rem;margin:0 0 1.2rem">
+        <h2 style="font-size:1.3rem;margin:.1rem 0 .5rem">What Your Business Gets</h2>
+        <p style="font-size:1rem;line-height:1.75;margin:.25rem 0">When your business gives, we thank you in public: your <strong>business name and logo on the class flyer</strong>, a <strong>shoutout</strong>, and a <strong>thank-you post</strong>. Your gift helps local families get free help with benefits, medicine, and more.</p>
+        <p style="font-size:1rem;line-height:1.75;margin:.25rem 0">Please know: Southern Oak is a for-profit business, so a gift is not tax-deductible.</p>
+      </div>
+      <form class="intake" action="https://formsubmit.co/southernoakfw@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Business Sponsor — Southern Oak">
+        <input type="hidden" name="_next" value="https://southernoakfw.org/thanks.html">
+        <input type="hidden" name="_template" value="table">
+        <h2 style="font-size:1.3rem;margin-top:0">Tell Us About Your Business</h2>
+        <div class="field-row"><div class="field"><label for="bname">Business name *</label><input id="bname" name="Business Name" type="text" required></div>
+        <div class="field"><label for="bcontact">Your name *</label><input id="bcontact" name="Contact Name" type="text" required></div></div>
+        <div class="field-row"><div class="field"><label for="bemail">Email *</label><input id="bemail" name="Email" type="email" required></div>
+        <div class="field"><label for="bphone">Phone</label><input id="bphone" name="Phone" type="tel"></div></div>
+        <div class="field-row"><div class="field"><label for="bcity">City</label><input id="bcity" name="City" type="text"></div>
+        <div class="field"><label for="bsite">Business website or Facebook page</label><input id="bsite" name="Website or Facebook" type="text"></div></div>
+        <div class="field"><label for="bwhat">What would you like to sponsor?</label>
+          <select id="bwhat" name="Sponsor What"><option value="">Please choose…</option><option>A free parent class</option><option>A family's help</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="blogo">Upload your business logo</label><input id="blogo" name="Business Logo" type="file" accept="image/*,.pdf"></div>
+        <div class="field"><label for="bmsg">Anything else?</label><textarea id="bmsg" name="Message" rows="3"></textarea></div>
+        <p style="font-size:.95rem;line-height:1.65">We will email you back. There are no set amounts — Jessica talks with you and sets the amount with you.</p>
+        <button class="btn" type="submit">Send My Information</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer id="reach-us">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Southern Oak Financial &amp; Wellness</h2>
+        <p>
+          Email: <a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a><br>
+          Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>
+          San Antonio, TX — Serving San Antonio, the Rio Grande Valley & surrounding cities
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="notice" role="note" aria-label="Disclaimer">Please know: We do not give refunds. We can not promise you will be approved. We are not lawyers.</div>
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  var data = {};
+  new FormData(form).forEach(function (value, key) {
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function (res) {
+    if (res.ok) {
+      window.location.href = 'https://calendly.com/southernoakfw/initial-consultation';
+    } else { throw new Error('send failed'); }
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Submit \u2014 Then Book My Zoom Time';
+    form.submit();
+  });
+});
+</script>
+</body>
+</html>
