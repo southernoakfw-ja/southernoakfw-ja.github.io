@@ -20,7 +20,7 @@
 <body>
 <div class="topbar">
   <div class="wrap">
-    <span>Serving All of Texas &nbsp;•&nbsp; Online by Zoom &amp; Email</span>
+    <span>Serving All of Texas &nbsp;•&nbsp; Online by Phone &amp; Email</span>
     <span><a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a></span>
   </div>
 </div>
@@ -44,7 +44,7 @@
       <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
       <h1>Life Insurance Quote Intake</h1>
       <p>Interested in a life insurance quote? Fill out this short intake and we&rsquo;ll prepare your quote. There is no fee from us until you approve a policy.</p>
-      <p>Your quote will be sent to you by email. If you would like to move forward, I would like to schedule a 30-minute Zoom with you — just let me know below what part of the day works best for you.</p>
+      <p>Your quote will be sent to you by email. If you would like to move forward, I would like to schedule a 30-minute phone call with you — just let me know below what part of the day works best for you.</p>
       <p><strong>For Texas families only, please.</strong></p>
     </div>
   </section>
@@ -125,7 +125,7 @@
         </div>
 
         <fieldset class="field">
-          <legend>If you would like to move forward, what part of the day works best for a 30-minute Zoom?</legend>
+          <legend>If you would like to move forward, what part of the day works best for a 30-minute phone call?</legend>
           <label class="choice"><input type="radio" name="zoom-time" value="Morning (9 am–12 pm CT)"> Morning (9 am–12 pm CT)</label>
           <label class="choice"><input type="radio" name="zoom-time" value="Afternoon (12–4 pm CT)"> Afternoon (12–4 pm CT)</label>
           <label class="choice"><input type="radio" name="zoom-time" value="Evening (4–7 pm CT)"> Evening (4–7 pm CT)</label>
@@ -152,7 +152,7 @@
     <div class="footer-grid3">
       <div>
         <h3>Southern Oak Financial &amp; Wellness</h3>
-        <p>Supporting Families. Building Futures.<br>San Antonio, TX — serving families across Texas. All visits online, by Zoom and email.</p>
+        <p>Supporting Families. Building Futures.<br>San Antonio, TX — serving families across Texas. All visits by phone and email.</p>
       </div>
       <div>
         <h3>Reach Us</h3>
@@ -193,7 +193,7 @@ document.getElementById('quote-form').addEventListener('submit', function (e) {
     'Coverage amount considering: ' + v('q-amount'),
     'Coverage type / length: ' + v('q-term'),
     'Beneficiary: ' + v('q-beneficiary'),
-    'Preferred time for a 30-minute Zoom: ' + zoom,
+    'Preferred time for a 30-minute phone call: ' + zoom,
     'Anything else: ' + v('q-notes')
   ];
   var subject = encodeURIComponent('Life Insurance Quote Request — ' + name);

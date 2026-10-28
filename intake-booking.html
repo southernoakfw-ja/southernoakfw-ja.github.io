@@ -20,7 +20,7 @@
 <body>
 <div class="topbar">
   <div class="wrap">
-    <span>Serving All of Texas &nbsp;•&nbsp; Online by Zoom &amp; Email</span>
+    <span>Serving All of Texas &nbsp;•&nbsp; Online by Phone &amp; Email</span>
     <span><a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a></span>
   </div>
 </div>
@@ -43,7 +43,7 @@
     <div class="wrap">
       <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
       <h1>Booking Intake Form</h1>
-      <p>Start here. Fill out this short form first, so Jessica can get ready for you. When you click Submit, your form goes to Jessica, and you go right on to book your Zoom time. There is nothing to email back.</p>
+      <p>Start here. Fill out this short form first, so Jessica can get ready for you. When you click Submit, your form goes to Jessica, and you go right on to book your phone call. There is nothing to email back.</p>
       <p><strong>For Texas families only, please.</strong></p>
     </div>
   </section>
@@ -96,7 +96,7 @@
 <div class="field"><label for="f-in_place_more">Tell us more about what is in place, in your own words</label><textarea id="f-in_place_more" name="in_place_more" rows="4"></textarea></div>
 <div class="field"><label for="f-biggest_question">What is your biggest question or concern?</label><textarea id="f-biggest_question" name="biggest_question" rows="4"></textarea></div>
 <div class="field"><label><input type="checkbox" name="confirm_correct" value="Yes" required> I understand the information above is correct *</label></div>
-<button class="btn" type="submit">Submit — Then Book My Zoom Time</button>
+<button class="btn" type="submit">Submit — Then Book My Phone Call</button>
 </form></div>
 </div>
 </section>
@@ -110,7 +110,7 @@
     <div class="footer-grid3">
       <div>
         <h3>Southern Oak Financial &amp; Wellness</h3>
-        <p>Supporting Families. Building Futures.<br>San Antonio, TX — serving families across Texas. All visits online, by Zoom and email.</p>
+        <p>Supporting Families. Building Futures.<br>San Antonio, TX — serving families across Texas. All visits by phone and email.</p>
       </div>
       <div>
         <h3>Reach Us</h3>
@@ -146,7 +146,7 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
     } else { throw new Error('send failed'); }
   }).catch(function () {
     btn.disabled = false;
-    btn.textContent = 'Submit \u2014 Then Book My Zoom Time';
+    btn.textContent = 'Submit \u2014 Then Book My Phone Call';
     form.submit();
   });
 });
