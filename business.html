@@ -33,7 +33,7 @@
       <a href="about.html">About Us</a>
       <a href="index.html#watch">Watch &amp; Learn</a>
       <a href="referral.html">Send a Referral</a>
-      <a class="book-btn" href="https://calendar.app.google/cARtERn9qB4A28qD7" target="_blank" rel="noopener">Book a Free Initial Meeting</a>
+      <a class="book-btn" href="https://calendar.app.google/cARtERn9qB4A28qD7" target="_blank" rel="noopener">Book Guidance Appointment</a>
     </nav>
   </div>
 </header>
@@ -110,7 +110,7 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
     body: JSON.stringify(data)
   }).then(function (res) {
     if (res.ok) {
-      window.location.href = 'https://calendly.com/southernoakfw/initial-consultation';
+      window.location.href = 'https://calendar.app.google/cARtERn9qB4A28qD7';
     } else { throw new Error('send failed'); }
   }).catch(function () {
     btn.disabled = false;
