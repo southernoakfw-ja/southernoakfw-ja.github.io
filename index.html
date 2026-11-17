@@ -138,9 +138,31 @@
     <h2 class="sec">What Families Say</h2>
     <blockquote>
       <div class="stars">★★★★★</div>
-      &ldquo;I believe in working with Jessica. She is always truly honest and helpful, and I&rsquo;m glad she is my agent.&rdquo;
-      <div class="who">— N. Chavez, Pharr, Texas · Life Insurance</div>
+      <span id="reviewText">&ldquo;I believe in working with Jessica. She is always truly honest and helpful, and I&rsquo;m glad she is my agent.&rdquo;</span>
+      <div class="who" id="reviewCite">— N. Chavez, Pharr, Texas</div>
+      <div style="margin-top:14px;">
+        <button type="button" class="rdot" data-r="0" aria-label="Review 1" style="width:10px;height:10px;border-radius:50%;border:none;margin:0 4px;cursor:pointer;background:var(--green);"></button>
+        <button type="button" class="rdot" data-r="1" aria-label="Review 2" style="width:10px;height:10px;border-radius:50%;border:none;margin:0 4px;cursor:pointer;background:#b9bfa4;"></button>
+      </div>
     </blockquote>
+    <script>
+    (function(){
+      var reviews = [
+        {t:"\u201CI believe in working with Jessica. She is always truly honest and helpful, and I\u2019m glad she is my agent.\u201D", c:"\u2014 N. Chavez, Pharr, Texas"},
+        {t:"\u201CSouthern Oak helped me find assistance for my medication and made the whole process simple and stress-free.\u201D", c:"\u2014 D. Villegas, San Antonio, Texas"}
+      ];
+      var i = 0, T = document.getElementById('reviewText'), C = document.getElementById('reviewCite');
+      var dots = document.querySelectorAll('.rdot');
+      function show(n){
+        i = n;
+        T.textContent = reviews[i].t;
+        C.textContent = reviews[i].c;
+        dots.forEach(function(d, k){ d.style.background = (k === i) ? 'var(--green)' : '#b9bfa4'; });
+      }
+      dots.forEach(function(d){ d.addEventListener('click', function(){ show(parseInt(d.getAttribute('data-r'), 10)); }); });
+      setInterval(function(){ show((i + 1) % reviews.length); }, 6000);
+    })();
+    </script>
   </div>
 </section>
 
