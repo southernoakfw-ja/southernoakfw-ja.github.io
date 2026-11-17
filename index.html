@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home — Southern Oak Financial &amp; Wellness</title>
+<title>Southern Oak Financial &amp; Wellness — Life Insurance</title>
 <style>
   :root{
     --green:#338D28; --deep:#1C4E16; --pale:#C4E8B8; --box:#EDF5E8;
@@ -13,14 +13,12 @@
   body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
   .previewbar{background:#7a1f1f;color:#fff;text-align:center;padding:10px 16px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:.04em}
   header.hero{background:var(--deep);color:#fff;text-align:center;padding:56px 22px 48px}
-  header.hero .brand{font-family:Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--pale);font-size:.85rem}
   header.hero h1{font-size:2.6rem;margin:.35em 0 .1em;line-height:1.15}
   header.hero h2{font-weight:normal;font-size:1.35rem;color:var(--pale);margin:.2em 0 1em}
   header.hero p{max-width:720px;margin:0 auto 1.4em;font-size:1.08rem}
   header.hero img.logo{height:72px;width:auto}
   header.hero img.family{display:block;max-width:680px;width:100%;height:auto;border-radius:18px;margin:18px auto 6px;border:4px solid var(--pale)}
   .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:14px 30px;border-radius:30px;font-family:Arial,sans-serif;font-weight:bold}
-  .btn.light{background:#fff;color:var(--deep)}
   .about-photo{width:220px;max-width:70vw;height:auto;border-radius:14px;border:4px solid var(--green);margin:0 auto 16px;display:block}
   main{max-width:820px;margin:0 auto;padding:0 22px}
   section{padding:44px 0 8px}
@@ -29,10 +27,11 @@
   h3.svc{font-size:1.45rem;color:var(--deep);margin:1.2em 0 .3em}
   .block{background:var(--box);border-left:6px solid var(--green);padding:22px 26px;margin:22px 0;border-radius:6px}
   .block p{margin:.4em 0}
-  ol.steps{margin:.5em 0 .5em 1.2em;padding:0}
-  ol.steps li{margin:.45em 0}
-  .sig{text-align:center;font-size:1.1rem;margin-top:18px}
-  .npn{font-family:Arial,sans-serif;font-weight:bold;color:var(--deep)}
+  .notice{background:#fdf6e3;border:2px solid #b8860b;border-radius:10px;padding:22px 26px;margin:22px 0}
+  .notice h3{color:#7a5b00;margin:.1em 0 .4em;font-size:1.3rem;text-align:center}
+  .notice p{margin:.4em 0}
+  ol.steps, ul.needs{margin:.5em 0 .5em 1.2em;padding:0}
+  ol.steps li, ul.needs li{margin:.45em 0}
   blockquote{background:#fff;border:1px solid var(--pale);border-radius:8px;padding:20px 26px;margin:20px 0;font-style:italic}
   blockquote .who{font-style:normal;font-family:Arial,sans-serif;font-weight:bold;color:var(--deep);margin-top:10px}
   blockquote .stars{color:var(--green);font-style:normal;letter-spacing:.2em}
@@ -43,102 +42,146 @@
   .cta p{max-width:680px;margin:0 auto 1.3em}
   footer{background:#142f0f;color:var(--pale);padding:36px 22px;font-size:.95rem}
   footer .cols{max-width:820px;margin:0 auto}
-  footer h3{color:#fff;font-size:1.05rem;margin:1em 0 .3em}
   footer a{color:var(--pale)}
   .fine{font-size:.82rem;opacity:.9}
-
   nav.top{background:var(--deep);padding:12px 16px;text-align:center}
   nav.top a{color:var(--pale);text-decoration:none;margin:0 10px;font-size:.98rem;font-family:Arial,sans-serif}
   nav.top a:hover{text-decoration:underline}
-  .doors{max-width:640px;margin:0 auto;text-align:left}
-  .door{display:block;background:#fff;border:2px solid var(--green);border-radius:14px;padding:16px 20px;margin:14px 0;text-decoration:none;color:var(--ink)}
-  .door b{color:var(--deep);font-size:1.15rem}
-  .door span{display:block;margin-top:4px;font-size:1rem}
-  header.subhero{background:var(--deep);color:#fff;text-align:center;padding:38px 22px 30px}
-  header.subhero h1{font-size:2rem;margin:.2em 0 .1em;line-height:1.2}
-  header.subhero p{max-width:680px;margin:0 auto;font-size:1.05rem;color:var(--pale)}
-  form.ref{max-width:560px;margin:0 auto;text-align:left}
-  form.ref label{display:block;font-weight:bold;margin:14px 0 5px;color:var(--deep)}
-  form.ref input,form.ref select{width:100%;padding:11px;border:1.5px solid #b9cdb2;border-radius:9px;font-size:1rem;box-sizing:border-box}
-  form.ref .err{color:#a11;font-weight:bold}
 </style>
 </head>
 <body>
 <nav class="top">
-  <a href="index.html">Home</a><a href="life-insurance.html">Life Insurance</a><a href="credit-repair.html">Credit Repair</a><a href="ssa-starter-kit.html">SSA Starter Kit</a><a href="about.html">About Me</a><a href="referral.html">Send a Referral</a><a href="index.html#prices">Prices</a><a href="watch.html">Watch &amp; Learn</a>
+  <a href="#life-insurance">Life Insurance</a><a href="#quote">Get a Quote</a><a href="#about">About Me</a><a href="#faq">Important Questions</a>
 </nav>
 <header class="hero">
   <img class="logo" src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo">
   <h1>Southern Oak Financial &amp; Wellness</h1>
   <h2>Family Services Consultant &amp; Advocate</h2>
   <img class="family" src="assets/hero-families.jpg" alt="Jessica Alvarez meeting with a family at a desk">
-  <p>Planning for your family can feel hard, but understanding your options does not have to be. I teach Texas families, in plain words, how to protect the people they love, repair their credit step by step, and get started with Social Security the right way — for a child, or for an adult.</p>
+  <p><strong>Life insurance you don&rsquo;t have to die to use.</strong> I teach Texas families, in plain words, how life insurance protects the people they love — while they are living, and after they are gone. We start with your budget, you learn how each policy really works, and you decide. No pressure, no surprises.</p>
   <a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a>
 </header>
 <main>
 
-<section>
+<section id="notice">
   <div class="wrap">
-    <div class="kicker">Start Here</div>
-    <h2 class="sec">Choose Your First Step</h2>
-    <div class="doors">
-      <a class="door" href="life-insurance.html"><b>1. Life Insurance</b><span>Life insurance you don't have to die to use — Term, IUL, Final Expense, Annuities, and Living Benefits.</span></a>
-      <a class="door" href="credit-repair.html"><b>2. Credit Repair</b><span>Understand your credit reports, spot errors, and dispute what is wrong — step by step.</span></a>
-      <a class="door" href="ssa-starter-kit.html"><b>3. Social Security Starter Kit — Adults &amp; Children</b><span>SSA's own free starter kits, walked through with you in plain words.</span></a>
-      <a class="door" href="about.html"><b>4. About Me</b><span>Meet Jessica Alvarez — listening first, educating always, no surprises.</span></a>
-      <a class="door" href="referral.html"><b>5. Send a Referral</b><span>Know a family who needs this help? Send them my way.</span></a>
+    <div class="notice">
+      <h3>A Change Starting December 1, 2026</h3>
+      <p>Starting <strong>December 1, 2026</strong>, Southern Oak Financial &amp; Wellness will focus on <strong>life insurance only</strong>. My credit repair service and my Social Security (SSA) starter kit service will end on November 30, 2026, and will no longer be offered.</p>
+      <p>Thank you to every family who trusted me with that work. If you need life insurance for your family, I am here — that is where my full attention goes now.</p>
+      <p style="text-align:center"><a class="btn" href="#life-insurance">See Life Insurance</a></p>
     </div>
-  </div>
-</section>
-<section id="reviews">
-  <div class="wrap">
-    <div class="kicker">Reviews</div>
-    <h2 class="sec">Real-Life Testimonials From Families I Have Helped</h2>
-    <p>★★★★★<br>“I believe in working with Jessica. She is always truly honest and helpful, and I'm glad she is my agent.”<br>— N. Chavez, Pharr, Texas · Life Insurance</p>
-    <p>★★★★★<br>“The guidance and assistance on how to apply made the whole process helpful and much easier to understand.”<br>— T. Torres, San Antonio, Texas · Social Security Guidance</p>
   </div>
 </section>
 
-<section id="prices">
+<section id="life-insurance">
   <div class="wrap">
-    <div class="kicker">Prices</div>
-    <h2 class="sec">Plain Prices, Shown Up Front</h2>
+    <div class="kicker">Life Insurance</div>
+    <h2 class="sec">Life Insurance You Don&rsquo;t Have to Die to Use</h2>
+    <p>Most people think life insurance only pays when you die. Many of today&rsquo;s policies can also help <strong>while you are living</strong> — that is called Living Benefits. If a qualifying illness or condition happens, you may be able to use part of your benefit early, when your family needs it most. I offer three kinds of coverage:</p>
+
+    <h3 class="svc">1. Term Life Insurance</h3>
+    <p>Coverage for a set number of years — for example, while your children are growing up or while you are paying on your home. It is the simplest, lowest-cost way to protect your family&rsquo;s income. Many term policies include Living Benefits.</p>
+
+    <h3 class="svc">2. IUL — Indexed Universal Life</h3>
+    <p>Permanent coverage that can build cash value over time, tied to a market index without being invested directly in the market. An IUL can protect your family for life and may include Living Benefits. I will teach you exactly how it works — the good parts and the limits — before you decide.</p>
+
+    <h3 class="svc">3. Final Expense</h3>
+    <p>A smaller, permanent policy made to cover funeral costs and final bills, so your family is not left raising money during the hardest week of their lives. Final expense is simple to apply for, and it is made to stay in place for life.</p>
+
     <div class="block">
-      <p><strong>Life Insurance</strong> — FREE talk. You pay $0 today. Term · IUL · Final Expense · Annuities. If you choose a policy, the insurance company sets your price.</p>
-      <p><strong>Credit Repair</strong> — You pay $150 for 90 days ($155.25 total by card). After 90 days, only if you need it: credit monitoring $29.99 a month.</p>
-      <p><strong>Medication Assistance Program</strong> — FREE. You pay $0. Starts January 2027.</p>
-      <p><strong>Social Security (SSA) Starter Kit</strong> — FREE. You pay $0.</p>
-      <p><strong>Need Help and Guidance</strong> — You pay $25 for 30 minutes on Zoom ($25.88 total by card).</p>
-      <p>Every price is the full price. No surprises. See full details on my <a href="services.html#prices">Services page</a>.</p>
+      <p><strong>How it works with me:</strong></p>
+      <ol class="steps">
+        <li>We start with your budget — what your family can truly afford.</li>
+        <li>I teach you how each kind of coverage works, in plain words.</li>
+        <li>I recommend the coverage that fits your family and your budget.</li>
+        <li>You decide. No pressure, ever.</li>
+      </ol>
     </div>
+    <p style="text-align:center"><a class="btn" href="#quote">Interested in a Quote?</a></p>
   </div>
 </section>
-<section id="faq">
+
+<section id="quote">
+  <div class="wrap">
+    <div class="kicker">Get a Quote</div>
+    <h2 class="sec">Interested in a Quote?</h2>
+    <p>A quote is free, and there is no obligation. To prepare an accurate quote for you, I will need:</p>
+    <ul class="needs">
+      <li>Your full name and date of birth</li>
+      <li>Your phone number and email</li>
+      <li>Your height and weight</li>
+      <li>Whether you use tobacco</li>
+      <li>Your current medications and any major health conditions</li>
+      <li>How much coverage you are considering</li>
+      <li>The kind of coverage you want — term (and for how many years), IUL, or final expense</li>
+      <li>Who this policy should protect — your beneficiary</li>
+      <li>A good time for a short Zoom call, so we can go over your quote together</li>
+    </ul>
+    <p>Your information stays with me. I use it only to prepare your quote and to talk with you about your options.</p>
+    <p style="text-align:center"><a class="btn" href="quote.html">Get My Free Quote</a> &nbsp; <a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a></p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="kicker">Reviews</div>
+    <h2 class="sec">What Families Say</h2>
+    <blockquote>
+      <div class="stars">★★★★★</div>
+      &ldquo;I believe in working with Jessica. She is always truly honest and helpful, and I&rsquo;m glad she is my agent.&rdquo;
+      <div class="who">— N. Chavez, Pharr, Texas · Life Insurance</div>
+    </blockquote>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">About Me</div>
+    <h2 class="sec">Listening First. Educating Always. No Surprises.</h2>
+    <img class="about-photo" src="assets/jessica-alvarez.jpg" alt="Jessica Alvarez, Southern Oak Financial &amp; Wellness">
+    <p>I&rsquo;m Jessica Alvarez, Founder and Owner of Southern Oak Financial &amp; Wellness in San Antonio, Texas, and a licensed, independent life insurance agent. I built my career serving families: five years working with the special needs community, including ABC of Southwest Texas; serving as a special needs advocate with Bexar County-area organizations, including University Health and CommuniCare; two years working with a medication assistance program; and serving as a benefit advocate with Consolidated Planning Group in Houston. I have been in life insurance for four years, and in April 2026 I founded Southern Oak Financial &amp; Wellness so families could get this help from one person who knows their story.</p>
+    <p>Education matters in this work. I hold a master&rsquo;s degree in Mental Health and Wellness from Grand Canyon University, and I am a doctoral candidate in Education — Organizational Leadership at Grand Canyon University, with a focus on special needs. I keep learning so I can keep teaching clearly.</p>
+    <p>My passion for this work is personal. I was diagnosed with juvenile rheumatoid arthritis at 11, and I watched my parents carry the worry, the bills, and the paperwork that come with doctors, medication, and Social Security. That is why my vision is simple: to be the trusted advocate families turn to first, so no one navigates benefits, medication, or insurance alone.</p>
+    <p>My work is about listening, educating, and making sure my clients know exactly what they are getting. I listen first, because every family&rsquo;s story is different. I educate in plain words, because a plan you do not understand is not a plan. And before you agree to anything, we go through it together — what it covers, what it does not cover, and what it means for your family — with no pressure and no surprises.</p>
+    <p><strong>This is your future life.</strong><br>The choices you make today protect the people you love tomorrow, and you deserve to understand every step of the plan that protects it.</p>
+    <p>Jessica Alvarez<br>Family Services Consultant &amp; Advocate<br>Southern Oak Financial &amp; Wellness, San Antonio, Texas — serving families anywhere in Texas<br><span style="font-family:Arial,sans-serif;font-weight:bold;color:#1C4E16">Licensed in Texas · NPN: 20530148</span></p>
+    <p style="text-align:center"><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a></p>
+  </div>
+</section>
+
+<section id="faq" class="faq">
   <div class="wrap">
     <div class="kicker">More Info</div>
     <h2 class="sec">Important Questions</h2>
-    <p><strong>Is life insurance right for me?</strong><br>If someone depends on your paycheck — a spouse, a partner, your children — life insurance is how you make sure they are protected if something happens to you, and Living Benefits can help while you are still living after a qualifying condition. We start with your budget, together, and you decide.</p>
-    <p><strong>How much coverage do I need?</strong><br>It depends on your family: your income, your home, your debts, and how long your family would need support. There is no one right number. In our free talk, we work it out together in plain words before any quote.</p>
-    <p><strong>Is a medical exam required?</strong><br>Many policies do not need a medical exam. What is needed depends on the type of coverage and the carrier's rules, and I will tell you up front what to expect.</p>
-    <p><strong>Can I choose my beneficiaries?</strong><br>Yes. You choose who receives the benefit — most families name a spouse or partner first, and a backup beneficiary too — and you can update your choice as life changes.</p>
-    <p><strong>What is the difference between the children's kit and the adults' kit?</strong><br>The steps are the same, but the sign-in is different. For a child, the parent creates the ID.me or Login.gov account in the parent's own name and enters the child's information in the application. An adult creates their own account, in their own name.</p>
-    <p><strong>Does Southern Oak decide my Social Security case?</strong><br>No. Social Security decides every case and answers in writing. My starter kit guidance teaches you the steps and helps you start strong and organized.</p>
-    <p><strong>Can credit repair fix everything on my report?</strong><br>No. Errors and items that cannot be proven can be disputed. True, accurate information stays. I will always tell you honestly what can and cannot be done.</p>
-    <p><strong>How do I sign up?</strong><br>Book a free consultation with me. We will talk about your family, answer your questions, and choose the right first step together — life insurance, credit repair, or a Social Security starter kit.</p>
+    <h3>Is life insurance right for me?</h3>
+    <p>If someone depends on your paycheck — a spouse, a partner, your children — life insurance is how you make sure they are protected if something happens to you, and Living Benefits can help while you are still living after a qualifying condition. We start with your budget, together, and you decide.</p>
+    <h3>How much coverage do I need?</h3>
+    <p>It depends on your family: your income, your home, your debts, and how long your family would need support. There is no one right number. In our free talk, we work it out together in plain words before any quote.</p>
+    <h3>Is a medical exam required?</h3>
+    <p>Many policies do not need a medical exam. What is needed depends on the type of coverage and the carrier&rsquo;s rules, and I will tell you up front what to expect.</p>
+    <h3>Can I choose my beneficiaries?</h3>
+    <p>Yes. You choose who receives the benefit — most families name a spouse or partner first, and a backup beneficiary too — and you can update your choice as life changes.</p>
+    <h3>How do I sign up?</h3>
+    <p>Book a free consultation with me, or send in the quote form above. We will talk about your family, answer your questions, and choose the right coverage together.</p>
     <p style="text-align:center"><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a></p>
   </div>
 </section>
 </main>
 
+<div class="cta">
+  <h2>Protecting Families. Building Futures.</h2>
+  <p>By phone and Zoom, anywhere in Texas. English &amp; Spanish.</p>
+  <a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" style="background:#fff;color:#1C4E16">Schedule a Free Consultation</a>
+</div>
+
 <footer>
-  <div class="wrap">
+  <div class="cols">
     <p><strong>Southern Oak Financial &amp; Wellness</strong><br>
     Jessica Alvarez · Family Services Consultant &amp; Advocate<br>
     Phone: 956-624-3790 · Email: southernoakfw@gmail.com · Website: southernoakfw.org<br>
     By appointment only. Serving families anywhere in Texas.</p>
-    <p>Company: <a href="about.html">About Me</a> · <a href="life-insurance.html">Life Insurance</a> · <a href="credit-repair.html">Credit Repair</a> · <a href="ssa-starter-kit.html">Social Security Starter Kit</a> · <a href="referral.html">Send a Referral</a></p>
-    <p class="fineprint">Life Insurance Disclaimer: This website teaches about life insurance in plain words, for education only. It is not financial, tax, or legal advice. Jessica Alvarez is a licensed, independent Texas life insurance agent. A quote is an estimate — the insurance company decides the final price and approval after its review, and coverage is not guaranteed. Living Benefits are part of certain policies: if you use them while you are living, they reduce the amount paid at death, and you must meet the policy's rules for a qualifying illness or condition.</p>
-    <p class="fineprint">Social Security guidance is education and step-by-step help only. Southern Oak Financial &amp; Wellness is not the Social Security Administration, does not decide cases, and cannot guarantee an approval.</p>
+    <p class="fine">Life Insurance Disclaimer: This website teaches about life insurance in plain words, for education only. It is not financial, tax, or legal advice. Jessica Alvarez is a licensed, independent Texas life insurance agent. A quote is an estimate — the insurance company decides the final price and approval after its review, and coverage is not guaranteed. Living Benefits are part of certain policies: if you use them while you are living, they reduce the amount paid at death, and you must meet the policy&rsquo;s rules for a qualifying illness or condition.</p>
     <p>Protecting Families. Building Futures.</p>
   </div>
 </footer>
