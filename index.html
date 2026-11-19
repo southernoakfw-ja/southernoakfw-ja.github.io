@@ -47,6 +47,12 @@
   nav.top{background:var(--deep);padding:12px 16px;text-align:center}
   nav.top a{color:var(--pale);text-decoration:none;margin:0 10px;font-size:.98rem;font-family:Arial,sans-serif}
   nav.top a:hover{text-decoration:underline}
+  .tabbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:28px 0 0}
+  .tabbtn{background:#fff;border:2px solid var(--green);color:var(--deep);font-family:Arial,sans-serif;font-weight:bold;font-size:1rem;padding:12px 20px;border-radius:30px;cursor:pointer}
+  .tabbtn.active{background:var(--green);color:#fff}
+  .tabpanel{display:none}
+  .tabpanel.active{display:block}
+  .tabpanel section{padding-top:20px}
 </style>
 </head>
 <body>
@@ -61,7 +67,15 @@
   <a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a>
 </header>
 <main>
-
+<div class="tabbar" id="services" role="tablist">
+  <button class="tabbtn active" data-tab="home" role="tab">Home</button>
+  <button class="tabbtn" data-tab="life" role="tab">Life Insurance</button>
+  <button class="tabbtn" data-tab="disability" role="tab">Disability Support</button>
+  <button class="tabbtn" data-tab="medication" role="tab">Medication Assistance</button>
+  <button class="tabbtn" data-tab="about" role="tab">About Me</button>
+  <button class="tabbtn" data-tab="faq" role="tab">Important Questions</button>
+</div>
+<div class="tabpanel active" id="panel-home">
 <section id="notice">
   <div class="wrap">
     <div class="notice">
@@ -72,7 +86,8 @@
     </div>
   </div>
 </section>
-
+</div>
+<div class="tabpanel" id="panel-life">
 <section id="life-insurance">
   <div class="wrap">
     <div class="kicker">Life Insurance</div>
@@ -97,34 +112,6 @@
         <li>You decide. No pressure, ever.</li>
       </ol>
     </div>
-  </div>
-</section>
-
-
-<section id="medication-assistance">
-  <div class="wrap">
-    <div class="kicker">Medication Assistance</div>
-    <h2 class="sec">Free Medication Assistance — Coming January 2027</h2>
-    <p>Starting January 2027, I will help you find <strong>free medication assistance through Texas Cares Rx and pharmaceutical company assistance programs</strong>. These programs can lower the cost of your prescriptions, and some provide medication at no cost if you qualify.</p>
-    <p>I will show you which programs fit your medication, what proof they ask for, and the steps to apply, in plain words. I do not fill out the applications for you — I give you the information and walk with you through the steps, so you stay in control of your own information.</p>
-  </div>
-</section>
-
-<section id="disability-support">
-  <div class="wrap">
-    <div class="kicker">Disability Support</div>
-    <h2 class="sec">Disability Support Specialist</h2>
-    <p>I help <strong>adults 18 and older</strong> gather their documents and apply for Social Security, step by step. Applying is confusing, and many people give up or miss something important. I walk with you through it, in plain words, so your application goes in complete.</p>
-    <p><strong>What I do for you:</strong></p>
-    <ul class="needs">
-      <li>Give you a clear list of the documents Social Security will ask for</li>
-      <li>Help you gather your documents — ID, medical records, work history, and doctor information</li>
-      <li>Walk you step by step through completing and submitting your Social Security application</li>
-      <li>Explain what happens after you apply, and what to watch for in the mail</li>
-    </ul>
-    <p>I guide you and help you apply. I do not work for Social Security, and Social Security makes the decision on every application.</p>
-    <p><strong>Fee: $150.00</strong> — a 3.5% card processing fee is added when you pay by card, for a total of <strong>$155.25</strong>.</p>
-    <p style="text-align:center"><a class="btn" href="https://square.link/u/OUi98pen">Pay the $150.00 Fee</a></p>
   </div>
 </section>
 
@@ -182,7 +169,37 @@
     </script>
   </div>
 </section>
-
+</div>
+<div class="tabpanel" id="panel-disability">
+<section id="disability-support">
+  <div class="wrap">
+    <div class="kicker">Disability Support</div>
+    <h2 class="sec">Disability Support Specialist</h2>
+    <p>I help <strong>adults 18 and older</strong> gather their documents and apply for Social Security, step by step. Applying is confusing, and many people give up or miss something important. I walk with you through it, in plain words, so your application goes in complete.</p>
+    <p><strong>What I do for you:</strong></p>
+    <ul class="needs">
+      <li>Give you a clear list of the documents Social Security will ask for</li>
+      <li>Help you gather your documents — ID, medical records, work history, and doctor information</li>
+      <li>Walk you step by step through completing and submitting your Social Security application</li>
+      <li>Explain what happens after you apply, and what to watch for in the mail</li>
+    </ul>
+    <p>I guide you and help you apply. I do not work for Social Security, and Social Security makes the decision on every application.</p>
+    <p><strong>Fee: $150.00</strong> — a 3.5% card processing fee is added when you pay by card, for a total of <strong>$155.25</strong>.</p>
+    <p style="text-align:center"><a class="btn" href="https://square.link/u/OUi98pen">Pay the $150.00 Fee</a></p>
+  </div>
+</section>
+</div>
+<div class="tabpanel" id="panel-medication">
+<section id="medication-assistance">
+  <div class="wrap">
+    <div class="kicker">Medication Assistance</div>
+    <h2 class="sec">Free Medication Assistance — Coming January 2027</h2>
+    <p>Starting January 2027, I will help you find <strong>free medication assistance through Texas Cares Rx and pharmaceutical company assistance programs</strong>. These programs can lower the cost of your prescriptions, and some provide medication at no cost if you qualify.</p>
+    <p>I will show you which programs fit your medication, what proof they ask for, and the steps to apply, in plain words. I do not fill out the applications for you — I give you the information and walk with you through the steps, so you stay in control of your own information.</p>
+  </div>
+</section>
+</div>
+<div class="tabpanel" id="panel-about">
 <section id="about">
   <div class="wrap">
     <div class="kicker">About Me</div>
@@ -196,7 +213,8 @@
     <p>Jessica Alvarez<br>Family Services Consultant &amp; Advocate<br>Southern Oak Financial &amp; Wellness, San Antonio, Texas — serving families anywhere in Texas<br><span style="font-family:Arial,sans-serif;font-weight:bold;color:#1C4E16">Licensed in Texas · NPN: 20530148</span></p>
   </div>
 </section>
-
+</div>
+<div class="tabpanel" id="panel-faq">
 <section id="faq" class="faq">
   <div class="wrap">
     <div class="kicker">More Info</div>
@@ -213,6 +231,7 @@
     <p>Book a free consultation with me, or send in the quote form above. We will talk about your family, answer your questions, and choose the right coverage together.</p>
   </div>
 </section>
+</div>
 </main>
 
 <div class="cta">
@@ -232,5 +251,24 @@
     <p>Protecting Families. Building Futures.</p>
   </div>
 </footer>
+<script>
+function openTab(name){
+  document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.toggle('active', p.id==='panel-'+name);});
+  document.querySelectorAll('.tabbtn').forEach(function(b){b.classList.toggle('active', b.dataset.tab===name);});
+}
+document.querySelectorAll('.tabbtn').forEach(function(b){
+  b.addEventListener('click', function(){
+    openTab(b.dataset.tab);
+    document.getElementById('services').scrollIntoView({behavior:'smooth'});
+  });
+});
+function tabForHash(h){
+  var map={'notice':'home','life-insurance':'life','quote':'life','reviews':'life','medication-assistance':'medication','disability-support':'disability','about':'about','faq':'faq'};
+  return map[h] || null;
+}
+function openFromHash(){ var t = tabForHash(location.hash.slice(1)); if(t) openTab(t); }
+window.addEventListener('hashchange', openFromHash);
+openFromHash();
+</script>
 </body>
 </html>
