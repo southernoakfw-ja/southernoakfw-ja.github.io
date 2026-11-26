@@ -60,6 +60,7 @@
   <button class="tabbtn active" data-tab="home" role="tab">Home</button>
   <button class="tabbtn" data-tab="life" role="tab">Life Insurance</button>
   <button class="tabbtn" data-tab="disability" role="tab">Disability Support</button>
+  <button class="tabbtn" data-tab="notary" role="tab">Mobile Notary</button>
   <button class="tabbtn" data-tab="about" role="tab">About Me</button>
   <button class="tabbtn" data-tab="faq" role="tab">Important Questions</button>
 </div>
@@ -185,6 +186,28 @@
   </div>
 </section>
 </div>
+<div class="tabpanel" id="panel-notary">
+<section id="notary">
+  <div class="wrap">
+    <div class="kicker">Mobile Notary</div>
+    <h2 class="sec">Mobile Notary Services — San Antonio, TX</h2>
+    <p>Need a document notarized? Let us come to you! We offer convenient mobile notary services within a 20-mile radius of Endeavor Boulevard on De Zavala Road, San Antonio, TX.</p>
+    <div class="block">
+      <p><strong>Our Pricing</strong></p>
+      <ul class="needs">
+        <li><strong>$35</strong> Mobile Travel Fee</li>
+        <li><strong>$10</strong> First Notarized Signature</li>
+        <li><strong>$1</strong> Each Additional Signature</li>
+      </ul>
+      <p>Serving clients within 20 miles of our De Zavala Road starting point.</p>
+    </div>
+    <p style="text-align:center"><strong>Call or Text: <a href="tel:+19566243790">956-624-3790</a></strong></p>
+    <p style="text-align:center"><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Book Your Appointment Today</a></p>
+    <p style="text-align:center">Professional. Convenient. Reliable.<br>Let Southern Oak make your notarization process easier!</p>
+    <p class="fine">Travel fee and notarial fees are separate. Additional fees, if applicable, will be disclosed before booking. Notarial fees follow the maximum amounts set by Texas law.</p>
+  </div>
+</section>
+</div>
 <div class="tabpanel" id="panel-about">
 <section id="about">
   <div class="wrap">
@@ -249,7 +272,7 @@ document.querySelectorAll('.tabbtn').forEach(function(b){
   });
 });
 function tabForHash(h){
-  var map={'notice':'home','life-insurance':'life','quote':'life','reviews':'life','disability-support':'disability','about':'about','faq':'faq'};
+  var map={'notice':'home','life-insurance':'life','quote':'life','reviews':'life','disability-support':'disability','notary':'notary','about':'about','faq':'faq'};
   return map[h] || null;
 }
 function openFromHash(){ var t = tabForHash(location.hash.slice(1)); if(t) openTab(t); }
