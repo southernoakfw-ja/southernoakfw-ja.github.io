@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Consultation — Southern Oak Financial &amp; Wellness</title>
+<style>
+  :root{
+    --green:#338D28; --deep:#1C4E16; --pale:#C2C28A; --box:#EDF5E8;
+    --ink:#22281f; --cream:#FFFDF6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  nav.top{background:var(--deep);padding:12px 16px;text-align:center}
+  nav.top a{color:var(--pale);text-decoration:none;margin:0 10px;font-size:.98rem;font-family:Arial,sans-serif}
+  header.hero{background:var(--deep);color:#fff;text-align:center;padding:48px 22px 40px}
+  header.hero h1{font-size:2.4rem;margin:.2em 0 .15em;line-height:1.15}
+  header.hero p{max-width:680px;margin:0 auto;font-size:1.08rem;color:#eaf3e4}
+  main{max-width:820px;margin:0 auto;padding:0 22px}
+  .block{background:var(--box);border-left:6px solid var(--green);padding:22px 26px;margin:26px 0;border-radius:6px}
+  form label{display:block;font-family:Arial,sans-serif;font-weight:bold;color:var(--deep);margin:18px 0 6px;font-size:1rem}
+  form label .hint{display:block;font-weight:normal;color:var(--ink);font-size:.9rem;margin-top:2px}
+  form input, form select, form textarea{
+    width:100%;padding:12px 14px;font-size:1.05rem;font-family:Arial,sans-serif;
+    border:2px solid var(--green);border-radius:8px;background:#fff;color:var(--ink)
+  }
+  form textarea{min-height:110px;resize:vertical}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:14px 30px;border-radius:30px;font-family:Arial,sans-serif;font-weight:bold;border:none;cursor:pointer;font-size:1.05rem}
+  .btn.big{width:100%;text-align:center;margin-top:24px;padding:16px 30px}
+  .fine{font-size:.88rem}
+  .center{text-align:center}
+  .alt{margin:30px 0;text-align:center}
+  .alt p{margin:.4em 0}
+  footer{background:#142f0f;color:var(--pale);padding:36px 22px;font-size:.95rem;margin-top:48px}
+  footer .cols{max-width:820px;margin:0 auto}
+  footer a{color:var(--pale)}
+</style>
+</head>
+<body>
+<nav class="top"><a href="https://southernoakfw.org">← Back to southernoakfw.org</a></nav>
+
+<header class="hero">
+  <h1>Free Consultation</h1>
+  <p>Please provide some information so we can schedule your appointment. It takes about a minute, and there is no cost and no obligation.</p>
+</header>
+
+<main>
+  <div class="block">
+    <form id="registerForm">
+      <label for="name">Your full name *
+        <input id="name" name="name" type="text" required autocomplete="name">
+      </label>
+
+      <label for="phone">Phone number *
+        <span class="hint">The best number for a call or text.</span>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+      </label>
+
+      <label for="email">Email
+        <input id="email" name="email" type="email" autocomplete="email">
+      </label>
+
+      <label for="topic">What do you need help with? *
+        <select id="topic" name="topic" required>
+          <option value="">Please choose one…</option>
+          <option>Life Insurance</option>
+          <option>Disability Support — help applying for Social Security</option>
+          <option>Pro Bono — a free Disability Support spot (4 each month)</option>
+          <option>Free Medication Assistance (starts January 2027)</option>
+          <option>Mobile Notary</option>
+          <option>Not sure — I need advice</option>
+        </select>
+      </label>
+
+      <label for="who">Who is this for?
+        <select id="who" name="who">
+          <option value="">Please choose one…</option>
+          <option>Myself</option>
+          <option>My child who is turning 18</option>
+          <option>Another family member</option>
+          <option>Someone I care for</option>
+        </select>
+      </label>
+
+      <label for="when">Best time to reach you
+        <select id="when" name="when">
+          <option value="">Please choose one…</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+      </label>
+
+      <label for="notes">Anything you want me to know before we talk?
+        <textarea id="notes" name="notes"></textarea>
+      </label>
+
+      <button class="btn big" type="submit">Send My Information</button>
+      <p class="fine">Tapping send opens your email app with everything filled in — just press send there, and I will take it from there.</p>
+      <p class="fine">Your information stays with me. I use it only to schedule your appointment and prepare for our talk.</p>
+    </form>
+  </div>
+
+  <div class="alt">
+    <p><strong>Rather pick your time right now?</strong></p>
+    <p><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a></p>
+    <p>Or call or text me: <strong>956-624-3790</strong></p>
+  </div>
+</main>
+
+<footer>
+  <div class="cols">
+    <p><strong>Southern Oak Financial &amp; Wellness</strong><br>
+    Jessica Alvarez — Family Services Consultant &amp; Advocate<br>
+    Independent Life Insurance Agent, Licensed in Texas • NPN: 20530148<br>
+    San Antonio, Texas — serving families anywhere in Texas<br>
+    956-624-3790 • <a href="https://southernoakfw.org">southernoakfw.org</a></p>
+    <p class="fine">I guide and help you apply for Social Security. I do not work for Social Security, and Social Security makes the decision on every application.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var v = function(id){ return document.getElementById(id).value.trim(); };
+  var lines = [
+    'FREE CONSULTATION REQUEST — from southernoakfw.org',
+    '',
+    'Name: ' + v('name'),
+    'Phone: ' + v('phone'),
+    'Email: ' + v('email'),
+    'Help needed: ' + v('topic'),
+    'This is for: ' + v('who'),
+    'Best time to reach me: ' + v('when'),
+    '',
+    'Notes:',
+    v('notes')
+  ];
+  var subject = 'Free Consultation Request — ' + v('name');
+  window.location.href = 'mailto:southernoakfw@gmail.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(lines.join('\n'));
+});
+</script>
+</body>
+</html>
