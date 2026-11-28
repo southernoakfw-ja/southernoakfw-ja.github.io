@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Consultation — Southern Oak Financial &amp; Wellness</title>
+<title>Consultation — Southern Oak Financial &amp; Wellness</title>
 <style>
   :root{
     --green:#338D28; --deep:#1C4E16; --pale:#C2C28A; --box:#EDF5E8;
@@ -42,8 +42,8 @@
 <nav class="top"><a href="https://southernoakfw.org">← Back to southernoakfw.org</a></nav>
 
 <header class="hero">
-  <h1>Free Consultation</h1>
-  <p>Please provide some information so we can schedule your appointment. It takes about a minute, and there is no cost and no obligation.</p>
+  <h1>Consultation</h1>
+  <p>Please provide some information so we can schedule your appointment. It takes about a minute, and there is no obligation.</p>
 </header>
 
 <main>
@@ -155,7 +155,7 @@
 
   <div class="alt">
     <p><strong>Rather pick your time right now?</strong></p>
-    <p><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Free Consultation</a></p>
+    <p><a class="btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7">Schedule a Consultation</a></p>
     <p>Or call or text me: <strong>956-624-3790</strong></p>
   </div>
 </main>
@@ -183,7 +183,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e){
   e.preventDefault();
   var v = function(id){ return document.getElementById(id).value.trim(); };
   var lines = [
-    'FREE CONSULTATION REQUEST — from southernoakfw.org',
+    'CONSULTATION REQUEST — from southernoakfw.org',
     '',
     'Name: ' + v('name'),
     'Phone: ' + v('phone'),
@@ -205,7 +205,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e){
   lines.push('');
   lines.push('Notes:');
   lines.push(v('notes'));
-  var subject = 'Free Consultation Request — ' + v('name');
+  var subject = 'Consultation Request — ' + v('name');
   window.location.href = 'mailto:southernoakfw@gmail.com'
     + '?subject=' + encodeURIComponent(subject)
     + '&body=' + encodeURIComponent(lines.join('\n'));

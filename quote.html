@@ -48,7 +48,7 @@
     <nav aria-label="Main">
       <a href="index.html">Home</a>
       <a href="referral.html">Send a Referral</a>
-      <a class="book-btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" target="_blank" rel="noopener">Schedule a Free Consultation</a>
+      <a class="book-btn" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" target="_blank" rel="noopener">Schedule a Consultation</a>
     </nav>
   </div>
 </header>
@@ -61,7 +61,7 @@
     <p class="sub">Protect your loved ones financially — with Living Benefits that can pay you while you&rsquo;re still living, when eligible.</p>
     <a class="quote-btn" href="#quote-form">Start Your Quote &rarr;</a>
     <img class="photo" src="assets/quote-hero-family.jpg" alt="A mother playing on the floor with her young child at home">
-    <p class="fine">Your consultation and your quote are free. There is no fee from us until you approve a policy. If you would like to move forward, Jessica will schedule a 30-minute phone call with you. <strong>For Texas families only, please.</strong></p>
+    <p class="fine">Your quote is free. There is no fee from us until you approve a policy. If you would like to move forward, Jessica will schedule a 30-minute phone call with you. <strong>For Texas families only, please.</strong></p>
   </div>
 </section>
 
@@ -164,15 +164,15 @@
 
         <p class="form-error" id="quote-error" hidden></p>
         <div class="buttons">
-          <button type="submit" class="btn i18n" data-en="Send — Then Book My Free Talk" data-es="Enviar — Luego Agendar Mi Plática Gratis">Send — Then Book My Free Talk</button>
+          <button type="submit" class="btn i18n" data-en="Send — Then Book My Talk" data-es="Enviar — Luego Agendar Mi Plática">Send — Then Book My Talk</button>
         </div>
-        <p class="form-note i18n" data-en="Free talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there." data-es="Plática gratis · Con cita · Sin presión — usted decide. Al enviar, se abre su aplicación de correo con sus respuestas dirigidas a Southern Oak — solo presione enviar ahí.">Free talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there.</p>
+        <p class="form-note i18n" data-en="Talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there." data-es="Plática · Con cita · Sin presión — usted decide. Al enviar, se abre su aplicación de correo con sus respuestas dirigidas a Southern Oak — solo presione enviar ahí.">Talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there.</p>
       </form>
 
       <div class="thanks-panel" id="quote-thanks" hidden>
         <h2 id="thanks-title">Thank you!</h2>
-        <p id="thanks-body">Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there's no cost and no pressure.</p>
-        <p><a class="quote-btn" id="thanks-book" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" target="_blank" rel="noopener">Book My Free Talk</a></p>
+        <p id="thanks-body">Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there's no pressure.</p>
+        <p><a class="quote-btn" id="thanks-book" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" target="_blank" rel="noopener">Book My Talk</a></p>
         <p id="thanks-close">If you don't book, I'll text you shortly to find a time. — Jessica</p>
       </div>
     </div>
@@ -212,8 +212,8 @@ function setLang(lang) {
   document.getElementById('lang-en').classList.toggle('active', lang === 'en');
   document.getElementById('lang-es').classList.toggle('active', lang === 'es');
   var T = {
-    en: { title: 'Thank you, ', body: 'Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there\'s no cost and no pressure.', book: 'Book My Free Talk', close: 'If you don\'t book, I\'ll text you shortly to find a time. — Jessica' },
-    es: { title: '¡Gracias, ', body: 'Sus respuestas se abrieron en su aplicación de correo — solo presione enviar ahí para que me lleguen. Luego elija su horario: las pláticas son por teléfono, de 20 a 30 minutos, sin costo y sin presión.', book: 'Agendar Mi Plática Gratis', close: 'Si no agenda, le enviaré un texto pronto para encontrar un horario. — Jessica' }
+    en: { title: 'Thank you, ', body: 'Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there\'s no pressure.', book: 'Book My Talk', close: 'If you don\'t book, I\'ll text you shortly to find a time. — Jessica' },
+    es: { title: '¡Gracias, ', body: 'Sus respuestas se abrieron en su aplicación de correo — solo presione enviar ahí para que me lleguen. Luego elija su horario: las pláticas son por teléfono, de 20 a 30 minutos, sin presión.', book: 'Agendar Mi Plática', close: 'Si no agenda, le enviaré un texto pronto para encontrar un horario. — Jessica' }
   };
   window._thanks = T[lang];
 }
@@ -258,7 +258,7 @@ document.getElementById('quote-form').addEventListener('submit', function (e) {
   var subject = encodeURIComponent('Life Insurance Quote Request — ' + name);
   var body = encodeURIComponent(lines.join('\n'));
   window.location.href = 'mailto:southernoakfw@gmail.com?subject=' + subject + '&body=' + body;
-  var T = window._thanks || { title: 'Thank you, ', body: '', book: 'Book My Free Talk', close: '' };
+  var T = window._thanks || { title: 'Thank you, ', body: '', book: 'Book My Talk', close: '' };
   document.getElementById('thanks-title').textContent = T.title + name.split(' ')[0] + '!';
   if (qLang === 'es') document.getElementById('thanks-title').textContent = '¡Gracias, ' + name.split(' ')[0] + '!';
   document.getElementById('thanks-body').textContent = T.body;
