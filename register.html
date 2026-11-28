@@ -148,9 +148,16 @@
       </label>
 
       <button class="btn big" type="submit">Send My Information</button>
-      <p class="fine">Tapping send opens your email app with everything filled in — just press send there. Then you will be taken to pick your appointment time.</p>
+      <p class="fine">Tapping send opens your email app with everything filled in — just press send there. Then this page shows you the button to pick your appointment time.</p>
       <p class="fine">Your information stays with me. I use it only to schedule your appointment and prepare for our talk.</p>
     </form>
+    <div id="afterSend" style="display:none;text-align:center;padding:10px 0 4px">
+      <h3 style="color:#1C4E16;font-family:Arial,sans-serif;margin:.4em 0">You're almost done</h3>
+      <p><strong>Step 1:</strong> Your email app just opened with your information filled in. Press <strong>send</strong> there so it reaches me.</p>
+      <p><strong>Step 2:</strong> Then pick your consultation time:</p>
+      <p><a class="btn big" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" style="margin-top:6px">Pick My Appointment Time</a></p>
+      <p class="fine">If your email app did not open, call or text me: <a href="tel:+19566243790">956-624-3790</a></p>
+    </div>
   </div>
 
   <div class="alt">
@@ -209,8 +216,11 @@ document.getElementById('registerForm').addEventListener('submit', function(e){
     + '?subject=' + encodeURIComponent(subject)
     + '&body=' + encodeURIComponent(lines.join('\n'));
   setTimeout(function(){
-    window.location.href = 'https://calendar.app.google/7Qz7n4cR7gxbXcRj7';
-  }, 1500);
+    document.getElementById('registerForm').style.display = 'none';
+    var p = document.getElementById('afterSend');
+    p.style.display = 'block';
+    p.scrollIntoView({behavior:'smooth'});
+  }, 400);
 });
 </script>
 </body>
