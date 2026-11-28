@@ -1,276 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Insurance Quote Intake — Southern Oak Financial &amp; Wellness</title>
-<meta name="description" content="Request a life insurance quote from Southern Oak Financial & Wellness. Fill out this short intake and we will prepare your quote.">
-<link rel="stylesheet" href="styles.css?v=11">
-<link rel="icon" href="assets/southern-oak-logo.png" type="image/svg+xml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Insurance Quote — Southern Oak Financial &amp; Wellness</title>
+<meta name="description" content="Request a life insurance quote from Southern Oak Financial & Wellness. Fill out this short form and Jessica will prepare your quote.">
+<link rel="icon" href="assets/southern-oak-logo.png" type="image/png">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z7DJGPRVX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-9Z7DJGPRVX');
 </script>
-
 <style>
-.quote-hero{background:#fff;text-align:center;padding:2.6rem 1rem 2.2rem;border-bottom:3px solid var(--gold)}
-.quote-hero h1{font-size:clamp(2.1rem,6vw,3.5rem);line-height:1.12;color:var(--olive-dark);margin:.4rem auto .8rem;max-width:820px}
-.quote-hero h1 em{color:var(--olive-light)}
-.quote-hero .sub{font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--olive);margin:0 auto 1.4rem;max-width:640px}
-.quote-btn{display:inline-block;background:var(--olive);color:#fff!important;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.02em;padding:1rem 2.6rem;border-radius:999px;box-shadow:0 6px 18px rgba(31,48,32,.25)}
-.quote-btn:hover{background:var(--olive-dark)}
-.quote-hero img.photo{display:block;width:100%;max-width:780px;margin:1.8rem auto 0;border-radius:16px}
-.quote-hero .fine{color:var(--muted);font-size:.98rem;max-width:640px;margin:1.1rem auto 0}
-.form-intro{font-size:1.05rem;margin:0 0 1.2rem}
-.lang-toggle{display:flex;gap:.5rem;justify-content:flex-end;margin-bottom:.8rem}
-.lang-btn{font-family:Arial,Helvetica,sans-serif;font-size:.9rem;padding:.4rem .9rem;border-radius:999px;border:1px solid var(--olive);background:#fff;color:var(--olive);cursor:pointer}
-.lang-btn.active{background:var(--olive);color:#fff}
-.consent-box{background:#f7f7f2;border:1px solid #ddd;border-radius:8px;padding:1rem}
-.thanks-panel{background:#fff;border:2px solid var(--olive);border-radius:12px;padding:1.8rem 1.4rem;text-align:center}
-.thanks-panel h2{color:var(--olive-dark);margin-top:0}
+  :root{
+    --green:#338D28; --deep:#1C4E16; --pale:#C2C28A; --box:#EDF5E8;
+    --ink:#22281f; --cream:#FFFDF6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  nav.top{background:var(--deep);padding:12px 16px;text-align:center}
+  nav.top a{color:var(--pale);text-decoration:none;margin:0 10px;font-size:.98rem;font-family:Arial,sans-serif}
+  header.hero{background:var(--deep);color:#fff;text-align:center;padding:48px 22px 40px}
+  header.hero h1{font-size:2.4rem;margin:.2em 0 .15em;line-height:1.15}
+  header.hero p{max-width:680px;margin:0 auto;font-size:1.08rem;color:#eaf3e4}
+  header.hero img.photo{display:block;width:100%;max-width:680px;margin:22px auto 0;border-radius:16px;border:4px solid var(--pale)}
+  main{max-width:820px;margin:0 auto;padding:0 22px}
+  .block{background:var(--box);border-left:6px solid var(--green);padding:22px 26px;margin:26px 0;border-radius:6px}
+  form label{display:block;font-family:Arial,sans-serif;font-weight:bold;color:var(--deep);margin:18px 0 6px;font-size:1rem}
+  form label .hint{display:block;font-weight:normal;color:var(--ink);font-size:.9rem;margin-top:2px}
+  form input[type=text], form input[type=tel], form input[type=email], form select{
+    width:100%;padding:12px 14px;font-size:1.05rem;font-family:Arial,sans-serif;
+    border:2px solid var(--green);border-radius:8px;background:#fff;color:var(--ink)
+  }
+  fieldset{border:none;padding:0;margin:18px 0 6px}
+  legend{font-family:Arial,sans-serif;font-weight:bold;color:var(--deep);font-size:1rem;padding:0;margin-bottom:6px}
+  label.choice{display:block;font-weight:normal;color:var(--ink);margin:6px 0;font-size:1rem}
+  label.choice input{margin-right:8px}
+  .consent{background:#fff;border:2px solid var(--green);border-radius:8px;padding:6px 16px 12px;margin-top:20px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:14px 30px;border-radius:30px;font-family:Arial,sans-serif;font-weight:bold;border:none;cursor:pointer;font-size:1.05rem}
+  .btn.big{width:100%;text-align:center;margin-top:24px;padding:16px 30px}
+  .fine{font-size:.88rem}
+  #quoteError{display:none;color:#a00;font-weight:bold;font-family:Arial,sans-serif}
+  #quoteThanks{display:none;text-align:center;padding:10px 0 4px}
+  #quoteThanks h3{color:var(--deep);font-family:Arial,sans-serif;margin:.4em 0}
+  footer{background:#142f0f;color:var(--pale);padding:36px 22px;font-size:.95rem;margin-top:48px}
+  footer .cols{max-width:820px;margin:0 auto}
+  footer a{color:var(--pale)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="wrap">
-    <span>Serving All of Texas &nbsp;•&nbsp; Online by Phone, Email &amp; Zoom</span>
-    <span><a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a></span>
-  </div>
-</div>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/southern-oak-logo.png" alt="Southern Oak logo" class="brand-logo"><span>Southern Oak<small>Financial &amp; Wellness</small></span></a>
-    <nav aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="referral.html">Send a Referral</a>
-      <a class="book-btn" href="register.html">Register</a>
-    </nav>
-  </div>
+<nav class="top"><a href="https://southernoakfw.org">← Back to southernoakfw.org</a></nav>
+
+<header class="hero">
+  <h1>Life Insurance You Don't Have to Die to Use</h1>
+  <p>Protect your loved ones financially — with Living Benefits that can pay you while you're still living, when eligible.</p>
+  <img class="photo" src="assets/quote-hero-family.jpg" alt="A mother playing on the floor with her young child at home">
 </header>
 
 <main>
-  <section class="quote-hero">
-  <div class="wrap">
-    <img src="assets/southern-oak-logo.png" alt="Southern Oak Financial &amp; Wellness logo" class="hero-logo">
-    <h1>Life Insurance You <em>Don&rsquo;t Have to Die</em> to Use</h1>
-    <p class="sub">Protect your loved ones financially — with Living Benefits that can pay you while you&rsquo;re still living, when eligible.</p>
-    <a class="quote-btn" href="#quote-form">Start Your Quote &rarr;</a>
-    <img class="photo" src="assets/quote-hero-family.jpg" alt="A mother playing on the floor with her young child at home">
-    <p class="fine">Your quote is free. There is no fee from us until you approve a policy. If you would like to move forward, Jessica will schedule a 30-minute phone call with you. <strong>For Texas families only, please.</strong></p>
-  </div>
-</section>
+  <div class="block">
+    <p style="margin-top:2px">Tell me a little about your family, and I'll come to our talk prepared. This takes about 60 seconds.</p>
+    <form id="quoteForm">
+      <label for="q-name">Full name *
+        <input id="q-name" type="text" required autocomplete="name">
+      </label>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
-        <button type="button" id="lang-en" class="lang-btn active">English</button>
-        <button type="button" id="lang-es" class="lang-btn">Español</button>
+      <label for="q-phone">Mobile phone *
+        <span class="hint">This is how I will text you.</span>
+        <input id="q-phone" type="tel" required autocomplete="tel" placeholder="Example: 210-555-0123">
+      </label>
+
+      <label for="q-email">Email (optional)
+        <input id="q-email" type="email" autocomplete="email">
+      </label>
+
+      <label for="q-zip">ZIP code *
+        <span class="hint">Southern Oak serves families anywhere in Texas.</span>
+        <input id="q-zip" type="text" required inputmode="numeric" autocomplete="postal-code">
+      </label>
+
+      <label for="q-age">Your age range
+        <select id="q-age">
+          <option>18–29</option>
+          <option>30–39</option>
+          <option>40–49</option>
+          <option>50–59</option>
+          <option>60–69</option>
+          <option>70+</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Who is this coverage for?</legend>
+        <label class="choice"><input type="radio" name="who" value="Me"> Me</label>
+        <label class="choice"><input type="radio" name="who" value="Me and my spouse/partner"> Me and my spouse/partner</label>
+        <label class="choice"><input type="radio" name="who" value="My parent"> My parent</label>
+        <label class="choice"><input type="radio" name="who" value="My whole family"> My whole family</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What matters most to you?</legend>
+        <label class="choice"><input type="radio" name="goal" value="Pay off the home"> Pay off the home</label>
+        <label class="choice"><input type="radio" name="goal" value="Replace my paycheck for my family"> Replace my paycheck for my family</label>
+        <label class="choice"><input type="radio" name="goal" value="Cover final expenses"> Cover final expenses</label>
+        <label class="choice"><input type="radio" name="goal" value="Leave something for my kids"> Leave something for my kids</label>
+        <label class="choice"><input type="radio" name="goal" value="Not sure — teach me"> Not sure — teach me</label>
+      </fieldset>
+
+      <label for="q-amount">How much coverage are you thinking about?
+        <select id="q-amount">
+          <option>Not sure yet</option>
+          <option>Under $25,000</option>
+          <option>$25,000–$50,000</option>
+          <option>$50,000–$100,000</option>
+          <option>$100,000–$250,000</option>
+          <option>Over $250,000</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Do you have life insurance today?</legend>
+        <label class="choice"><input type="radio" name="has" value="Yes"> Yes</label>
+        <label class="choice"><input type="radio" name="has" value="No"> No</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Do you use tobacco?</legend>
+        <label class="choice"><input type="radio" name="tobacco" value="Yes"> Yes</label>
+        <label class="choice"><input type="radio" name="tobacco" value="No"> No</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Best time to reach you</legend>
+        <label class="choice"><input type="radio" name="reach" value="Morning"> Morning</label>
+        <label class="choice"><input type="radio" name="reach" value="Afternoon"> Afternoon</label>
+        <label class="choice"><input type="radio" name="reach" value="Evening"> Evening</label>
+      </fieldset>
+
+      <div class="consent">
+        <label class="choice" style="font-weight:normal">
+          <input type="checkbox" id="q-consent">
+          Yes — Jessica Alvarez with Southern Oak may call and text me about life insurance at the number I gave, including by automated means. I understand this is not a condition of buying anything, and I can reply STOP anytime.
+        </label>
       </div>
-      <p class="form-intro i18n" data-en="Tell me a little about your family, and I'll come to our talk prepared. This takes about 60 seconds." data-es="Cuénteme un poco sobre su familia y llegaré a nuestra plática preparada. Esto toma unos 60 segundos.">Tell me a little about your family, and I'll come to our talk prepared. This takes about 60 seconds.</p>
-      <form id="quote-form" novalidate>
-        <div class="field">
-          <label for="q-name"><span class="i18n" data-en="Full name" data-es="Nombre completo">Full name</span> *</label>
-          <input type="text" id="q-name" name="name" autocomplete="name" required>
-        </div>
 
-        <div class="field">
-          <label for="q-phone"><span class="i18n" data-en="Mobile phone" data-es="Teléfono celular">Mobile phone</span> *</label>
-          <input type="tel" id="q-phone" name="phone" autocomplete="tel" placeholder="Example: 210-555-0123" required>
-          <p class="form-note i18n" data-en="This is how Jessica will text you." data-es="Así es como Jessica le enviará un texto.">This is how Jessica will text you.</p>
-        </div>
+      <p id="quoteError"></p>
+      <button class="btn big" type="submit">Send My Quote Request</button>
+      <p class="fine">Tapping send delivers your answers straight to me — no email app needed. Then this page shows you the button to pick your appointment time.</p>
+      <p class="fine">Your quote is free, and there is no obligation. There is no fee from us until you approve a policy. <strong>For Texas families only, please.</strong></p>
+      <p class="fine">Your information stays with me. I use it only to prepare your quote and talk with you about your options.</p>
+    </form>
 
-        <div class="field">
-          <label for="q-email"><span class="i18n" data-en="Email (optional)" data-es="Correo electrónico (opcional)">Email (optional)</span></label>
-          <input type="email" id="q-email" name="email" autocomplete="email">
-        </div>
-
-        <div class="field">
-          <label for="q-zip"><span class="i18n" data-en="ZIP code" data-es="Código postal">ZIP code</span> *</label>
-          <input type="text" id="q-zip" name="zip" inputmode="numeric" autocomplete="postal-code" required>
-          <p class="form-note i18n" data-en="Southern Oak serves families anywhere in Texas." data-es="Southern Oak sirve a familias en todo Texas.">Southern Oak serves families anywhere in Texas.</p>
-        </div>
-
-        <div class="field">
-          <label for="q-age"><span class="i18n" data-en="Your age range" data-es="Su rango de edad">Your age range</span></label>
-          <select id="q-age" name="age">
-            <option>18–29</option>
-            <option>30–39</option>
-            <option>40–49</option>
-            <option>50–59</option>
-            <option>60–69</option>
-            <option>70+</option>
-          </select>
-        </div>
-
-        <fieldset class="field">
-          <legend class="i18n" data-en="Who is this coverage for?" data-es="¿Para quién es esta cobertura?">Who is this coverage for?</legend>
-          <label class="choice"><input type="radio" name="who" value="Me"> <span class="i18n" data-en="Me" data-es="Para mí">Me</span></label>
-          <label class="choice"><input type="radio" name="who" value="Me and my spouse/partner"> <span class="i18n" data-en="Me and my spouse/partner" data-es="Para mí y mi pareja">Me and my spouse/partner</span></label>
-          <label class="choice"><input type="radio" name="who" value="My parent"> <span class="i18n" data-en="My parent" data-es="Para mi padre o madre">My parent</span></label>
-          <label class="choice"><input type="radio" name="who" value="My whole family"> <span class="i18n" data-en="My whole family" data-es="Para toda mi familia">My whole family</span></label>
-        </fieldset>
-
-        <fieldset class="field">
-          <legend class="i18n" data-en="What matters most to you?" data-es="¿Qué es lo más importante para usted?">What matters most to you?</legend>
-          <label class="choice"><input type="radio" name="goal" value="Pay off the home"> <span class="i18n" data-en="Pay off the home" data-es="Pagar la casa">Pay off the home</span></label>
-          <label class="choice"><input type="radio" name="goal" value="Replace my paycheck for my family"> <span class="i18n" data-en="Replace my paycheck for my family" data-es="Reemplazar mi sueldo para mi familia">Replace my paycheck for my family</span></label>
-          <label class="choice"><input type="radio" name="goal" value="Cover final expenses"> <span class="i18n" data-en="Cover final expenses" data-es="Cubrir los gastos finales">Cover final expenses</span></label>
-          <label class="choice"><input type="radio" name="goal" value="Leave something for my kids"> <span class="i18n" data-en="Leave something for my kids" data-es="Dejar algo para mis hijos">Leave something for my kids</span></label>
-          <label class="choice"><input type="radio" name="goal" value="Not sure — teach me"> <span class="i18n" data-en="Not sure — teach me" data-es="No estoy seguro/a — enséñeme">Not sure — teach me</span></label>
-        </fieldset>
-
-        <div class="field">
-          <label for="q-amount"><span class="i18n" data-en="How much coverage are you thinking about?" data-es="¿Cuánta cobertura está considerando?">How much coverage are you thinking about?</span></label>
-          <select id="q-amount" name="amount">
-            <option class="i18n" data-en="Not sure yet" data-es="No estoy seguro/a todavía">Not sure yet</option>
-            <option>Under $25,000</option>
-            <option>$25,000–$50,000</option>
-            <option>$50,000–$100,000</option>
-            <option>$100,000–$250,000</option>
-            <option>Over $250,000</option>
-          </select>
-        </div>
-
-        <fieldset class="field">
-          <legend class="i18n" data-en="Do you have life insurance today?" data-es="¿Tiene seguro de vida hoy?">Do you have life insurance today?</legend>
-          <label class="choice"><input type="radio" name="has" value="Yes"> <span class="i18n" data-en="Yes" data-es="Sí">Yes</span></label>
-          <label class="choice"><input type="radio" name="has" value="No"> <span class="i18n" data-en="No" data-es="No">No</span></label>
-        </fieldset>
-
-        <fieldset class="field">
-          <legend class="i18n" data-en="Do you use tobacco?" data-es="¿Usa tabaco?">Do you use tobacco?</legend>
-          <label class="choice"><input type="radio" name="tobacco" value="Yes"> <span class="i18n" data-en="Yes" data-es="Sí">Yes</span></label>
-          <label class="choice"><input type="radio" name="tobacco" value="No"> <span class="i18n" data-en="No" data-es="No">No</span></label>
-        </fieldset>
-
-        <fieldset class="field">
-          <legend class="i18n" data-en="Best time to reach you" data-es="Mejor momento para contactarle">Best time to reach you</legend>
-          <label class="choice"><input type="radio" name="reach" value="Morning"> <span class="i18n" data-en="Morning" data-es="En la mañana">Morning</span></label>
-          <label class="choice"><input type="radio" name="reach" value="Afternoon"> <span class="i18n" data-en="Afternoon" data-es="En la tarde">Afternoon</span></label>
-          <label class="choice"><input type="radio" name="reach" value="Evening"> <span class="i18n" data-en="Evening" data-es="En la noche">Evening</span></label>
-        </fieldset>
-
-        <div class="field consent-box">
-          <label class="choice" style="display:block">
-            <input type="checkbox" id="q-consent" name="consent" value="Yes">
-            <span class="i18n" data-en="Yes — Jessica Alvarez with Southern Oak may call and text me about life insurance at the number I gave, including by automated means. I understand this is not a condition of buying anything, and I can reply STOP anytime." data-es="Sí — Jessica Alvarez, de Southern Oak, puede llamarme y enviarme textos sobre seguros de vida al número que di, incluso por medios automatizados. Entiendo que esto no es una condición para comprar nada y que puedo responder STOP en cualquier momento.">Yes — Jessica Alvarez with Southern Oak may call and text me about life insurance at the number I gave, including by automated means. I understand this is not a condition of buying anything, and I can reply STOP anytime.</span>
-          </label>
-        </div>
-
-        <p class="form-error" id="quote-error" hidden></p>
-        <div class="buttons">
-          <button type="submit" class="btn i18n" data-en="Send — Then Book My Talk" data-es="Enviar — Luego Agendar Mi Plática">Send — Then Book My Talk</button>
-        </div>
-        <p class="form-note i18n" data-en="Talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there." data-es="Plática · Con cita · Sin presión — usted decide. Al enviar, se abre su aplicación de correo con sus respuestas dirigidas a Southern Oak — solo presione enviar ahí.">Talk · By appointment · No pressure — you decide. Sending opens your email app with your answers addressed to Southern Oak — just press send there.</p>
-      </form>
-
-      <div class="thanks-panel" id="quote-thanks" hidden>
-        <h2 id="thanks-title">Thank you!</h2>
-        <p id="thanks-body">Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there's no pressure.</p>
-        <p><a class="quote-btn" id="thanks-book" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" target="_blank" rel="noopener">Book My Talk</a></p>
-        <p id="thanks-close">If you don't book, I'll text you shortly to find a time. — Jessica</p>
-      </div>
+    <div id="quoteThanks">
+      <h3 id="thanksTitle">Thank you — your quote request was sent</h3>
+      <p>I have your answers now, and I'll come to our talk prepared. One last step: pick your appointment time. Talks are by phone, about 20–30 minutes, and there's no pressure.</p>
+      <p><a class="btn big" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" style="margin-top:6px">Pick My Appointment Time</a></p>
+      <p class="fine">If you don't pick a time, I'll text you shortly to find one. — Jessica</p>
     </div>
-  </section>
+  </div>
+
+  <p style="text-align:center">Rather register first? <a href="register.html">Register here</a> · Know someone who needs this help? <a href="referral.html">Send a Referral</a></p>
 </main>
 
-<footer id="reach-us">
-  <div class="wrap">
-    <div class="footer-grid3">
-      <div>
-        <h3>Southern Oak Financial &amp; Wellness</h3>
-        <p>Protecting Families. Building Futures.<br>San Antonio, TX — serving families across Texas. All visits by phone, email, and Zoom.</p>
-      </div>
-      <div>
-        <h3>Reach Us</h3>
-        <p>Email: <a href="mailto:southernoakfw@gmail.com">southernoakfw@gmail.com</a><br>
-          Phone: <a href="tel:+19566243790">956-624-3790</a><br>Website: <a href="https://southernoakfw.org">Southernoakfw.org</a><br>By appointment only.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <p><a href="referral.html">Send a Referral</a><br>
-      <a href="quote.html">Free Life Insurance Quote</a></p>
-      </div>
-    </div>
-    <p class="fineprint">Life Insurance Disclaimer: This website teaches about life insurance in plain words, for education only. It is not financial, tax, or legal advice. Jessica Alvarez is a licensed, independent Texas life insurance agent. A quote is an estimate — the insurance company decides the final price and approval after its review, and coverage is not guaranteed. Living Benefits are part of certain policies: if you use them while you are living, they reduce the amount paid at death, and you must meet the policy's rules for a qualifying illness or condition.</p>
+<footer>
+  <div class="cols">
+    <p><strong>Southern Oak Financial &amp; Wellness</strong><br>
+    Jessica Alvarez — Family Services Consultant &amp; Advocate<br>
+    Independent Life Insurance Agent, Licensed in Texas • NPN: 20530148<br>
+    San Antonio, Texas — serving families anywhere in Texas<br>
+    <a href="tel:+19566243790">956-624-3790</a> • <a href="https://southernoakfw.org">southernoakfw.org</a></p>
+    <p class="fine">Life Insurance Disclaimer: This website teaches about life insurance in plain words, for education only. It is not financial, tax, or legal advice. Jessica Alvarez is a licensed, independent Texas life insurance agent. A quote is an estimate — the insurance company decides the final price and approval after its review, and coverage is not guaranteed. Living Benefits are part of certain policies: if you use them while you are living, they reduce the amount paid at death, and you must meet the policy's rules for a qualifying illness or condition.</p>
   </div>
 </footer>
 
 <script>
-var qLang = 'en';
-function setLang(lang) {
-  qLang = lang;
-  document.querySelectorAll('.i18n').forEach(function (el) {
-    var t = el.getAttribute('data-' + lang);
-    if (t) el.textContent = t;
-  });
-  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-  document.getElementById('lang-es').classList.toggle('active', lang === 'es');
-  var T = {
-    en: { title: 'Thank you, ', body: 'Your answers opened in your email app — just press send there so they reach me. Now pick your time: talks are by phone, about 20–30 minutes, and there\'s no pressure.', book: 'Book My Talk', close: 'If you don\'t book, I\'ll text you shortly to find a time. — Jessica' },
-    es: { title: '¡Gracias, ', body: 'Sus respuestas se abrieron en su aplicación de correo — solo presione enviar ahí para que me lleguen. Luego elija su horario: las pláticas son por teléfono, de 20 a 30 minutos, sin presión.', book: 'Agendar Mi Plática', close: 'Si no agenda, le enviaré un texto pronto para encontrar un horario. — Jessica' }
-  };
-  window._thanks = T[lang];
-}
-document.getElementById('lang-en').addEventListener('click', function () { setLang('en'); });
-document.getElementById('lang-es').addEventListener('click', function () { setLang('es'); });
-
-document.getElementById('quote-form').addEventListener('submit', function (e) {
+document.getElementById('quoteForm').addEventListener('submit', function(e){
   e.preventDefault();
-  var name = document.getElementById('q-name').value.trim();
-  var phone = document.getElementById('q-phone').value.trim();
-  var email = document.getElementById('q-email').value.trim();
-  var zip = document.getElementById('q-zip').value.trim();
-  var consent = document.getElementById('q-consent').checked;
-  var err = document.getElementById('quote-error');
-  function fail(msg) { err.textContent = msg; err.hidden = false; err.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-  var M = {
-    en: { missing: 'Please fill in your name, mobile phone, and ZIP code so Jessica can reach you about your quote.', zip: 'This form is for Texas families — please check your ZIP code. If you are outside Texas, email us at southernoakfw@gmail.com and we will point you the right way.', consent: 'Please check the permission box so Jessica may call and text you about your quote.' },
-    es: { missing: 'Por favor escriba su nombre, teléfono celular y código postal para que Jessica pueda contactarle sobre su cotización.', zip: 'Este formulario es para familias de Texas — por favor revise su código postal. Si está fuera de Texas, escríbanos a southernoakfw@gmail.com y le orientamos.', consent: 'Por favor marque la casilla de permiso para que Jessica pueda llamarle y enviarle textos sobre su cotización.' }
-  }[qLang];
-  if (!name || !phone || !zip) { fail(M.missing); return; }
-  if (!/^(7[5-9][0-9]{3}|885[0-9]{2})$/.test(zip)) { fail(M.zip); return; }
-  if (!consent) { fail(M.consent); return; }
-  err.hidden = true;
-  function v(id) { var el = document.getElementById(id); return el ? (el.value.trim() || '—') : '—'; }
-  function r(nm) { var el = document.querySelector('input[name="' + nm + '"]:checked'); return el ? el.value : '—'; }
-  var lines = [
-    'LIFE INSURANCE QUOTE REQUEST (funnel form)',
-    '',
-    'Full name: ' + name,
-    'Mobile phone: ' + phone,
-    'Email: ' + (email || '—'),
-    'ZIP code: ' + zip,
-    'Age range: ' + v('q-age'),
-    'Coverage for: ' + r('who'),
-    'What matters most: ' + r('goal'),
-    'Coverage amount considering: ' + v('q-amount'),
-    'Has life insurance today: ' + r('has'),
-    'Tobacco use: ' + r('tobacco'),
-    'Best time to reach: ' + r('reach'),
-    'Consent to call/text: Yes'
-  ];
-  var subject = encodeURIComponent('Life Insurance Quote Request — ' + name);
-  var body = encodeURIComponent(lines.join('\n'));
-  window.location.href = 'mailto:southernoakfw@gmail.com?subject=' + subject + '&body=' + body;
-  var T = window._thanks || { title: 'Thank you, ', body: '', book: 'Book My Talk', close: '' };
-  document.getElementById('thanks-title').textContent = T.title + name.split(' ')[0] + '!';
-  if (qLang === 'es') document.getElementById('thanks-title').textContent = '¡Gracias, ' + name.split(' ')[0] + '!';
-  document.getElementById('thanks-body').textContent = T.body;
-  document.getElementById('thanks-book').textContent = T.book;
-  document.getElementById('thanks-close').textContent = T.close;
-  document.getElementById('quote-form').hidden = true;
-  var th = document.getElementById('quote-thanks');
-  th.hidden = false;
-  th.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  var form = this;
+  var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var r = function(nm){ var el = document.querySelector('input[name="' + nm + '"]:checked'); return el ? el.value : '—'; };
+  var err = document.getElementById('quoteError');
+  function fail(msg){
+    err.textContent = msg;
+    err.style.display = 'block';
+    err.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  var name = v('q-name'), phone = v('q-phone'), zip = v('q-zip');
+  if (!name || !phone || !zip){ fail('Please fill in your name, mobile phone, and ZIP code so I can reach you about your quote.'); return; }
+  if (!/^(7[5-9][0-9]{3}|885[0-9]{2})$/.test(zip)){ fail('This form is for Texas families — please check your ZIP code. If you are outside Texas, email me at southernoakfw@gmail.com and I will point you the right way.'); return; }
+  if (!document.getElementById('q-consent').checked){ fail('Please check the permission box so I may call and text you about your quote.'); return; }
+  err.style.display = 'none';
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  var data = {
+    '_subject': 'Life Insurance Quote Request — ' + name,
+    '_template': 'table',
+    '_captcha': 'false',
+    '_honey': '',
+    'Full name': name,
+    'Mobile phone': phone,
+    'Email': v('q-email') || '—',
+    'ZIP code': zip,
+    'Age range': v('q-age'),
+    'Coverage for': r('who'),
+    'What matters most': r('goal'),
+    'Coverage amount considering': v('q-amount'),
+    'Has life insurance today': r('has'),
+    'Tobacco use': r('tobacco'),
+    'Best time to reach': r('reach'),
+    'Consent to call/text': 'Yes'
+  };
+  if (v('q-email')){ data['_replyto'] = v('q-email'); }
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify(data)
+  }).then(function(r2){ return r2.json(); }).then(function(res){
+    if (res && (res.success === true || res.success === 'true')){
+      document.getElementById('thanksTitle').textContent = 'Thank you, ' + name.split(' ')[0] + ' — your quote request was sent';
+      form.style.display = 'none';
+      var p = document.getElementById('quoteThanks');
+      p.style.display = 'block';
+      p.scrollIntoView({behavior:'smooth'});
+    } else { throw new Error('send failed'); }
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = 'Send My Quote Request';
+    fail('Something went wrong sending. Please try again, or call or text me: 956-624-3790');
+  });
 });
-setLang('en');
 </script>
-
 </body>
 </html>
