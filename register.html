@@ -148,15 +148,15 @@
       </label>
 
       <button class="btn big" type="submit">Send My Information</button>
-      <p class="fine">Tapping send opens your email app with everything filled in — just press send there. Then this page shows you the button to pick your appointment time.</p>
+      <p class="fine">Tapping send delivers your information straight to me — no email app needed. Then this page shows you the button to pick your appointment time.</p>
+      <p class="fine" id="sendError" style="display:none;color:#a00;font-weight:bold">Something went wrong sending. Please try again, or call or text me: <a href="tel:+19566243790">956-624-3790</a></p>
       <p class="fine">Your information stays with me. I use it only to schedule your appointment and prepare for our talk.</p>
     </form>
     <div id="afterSend" style="display:none;text-align:center;padding:10px 0 4px">
-      <h3 style="color:#1C4E16;font-family:Arial,sans-serif;margin:.4em 0">You're almost done</h3>
-      <p><strong>Step 1:</strong> Your email app just opened with your information filled in. Press <strong>send</strong> there so it reaches me.</p>
-      <p><strong>Step 2:</strong> Then pick your consultation time:</p>
+      <h3 style="color:#1C4E16;font-family:Arial,sans-serif;margin:.4em 0">Thank you — your information was sent</h3>
+      <p>I have it now. One last step: pick your consultation time.</p>
       <p><a class="btn big" href="https://calendar.app.google/7Qz7n4cR7gxbXcRj7" style="margin-top:6px">Pick My Appointment Time</a></p>
-      <p class="fine">If your email app did not open, call or text me: <a href="tel:+19566243790">956-624-3790</a></p>
+      <p class="fine">Questions? Call or text me: <a href="tel:+19566243790">956-624-3790</a></p>
     </div>
   </div>
 
@@ -187,40 +187,50 @@ topicSel.addEventListener('change', function(){
 
 document.getElementById('registerForm').addEventListener('submit', function(e){
   e.preventDefault();
+  var form = this;
   var v = function(id){ return document.getElementById(id).value.trim(); };
-  var lines = [
-    'CONSULTATION REQUEST — from southernoakfw.org',
-    '',
-    'Name: ' + v('name'),
-    'Phone: ' + v('phone'),
-    'Email: ' + v('email'),
-    'Help needed: ' + v('topic')
-  ];
+  var btn = form.querySelector('button[type="submit"]');
+  var err = document.getElementById('sendError');
+  err.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending\u2026';
+  var data = {
+    '_subject': 'Consultation Request \u2014 ' + v('name'),
+    '_template': 'table',
+    '_captcha': 'false',
+    '_honey': '',
+    'Name': v('name'),
+    'Phone': v('phone'),
+    'Email': v('email'),
+    'Help needed': v('topic'),
+    'This is for': v('who'),
+    'Best time to reach': v('when'),
+    'Notes': v('notes')
+  };
+  if (v('email')){ data['_replyto'] = v('email'); }
   if (isProBono()){
-    lines.push('');
-    lines.push('PRO BONO QUESTIONS:');
-    lines.push('Lives in Texas: ' + v('pbTexas'));
-    lines.push('Application is for: ' + v('pbWho'));
-    lines.push('SNAP, Medicaid, or SSI in the home: ' + v('pbBenefits'));
-    lines.push('Income under the limit: ' + v('pbIncome'));
-    lines.push('Paid lawyer or representative already: ' + v('pbLawyer'));
+    data['PRO BONO \u2014 Lives in Texas'] = v('pbTexas');
+    data['PRO BONO \u2014 Application is for'] = v('pbWho');
+    data['PRO BONO \u2014 SNAP, Medicaid, or SSI in the home'] = v('pbBenefits');
+    data['PRO BONO \u2014 Income under the limit'] = v('pbIncome');
+    data['PRO BONO \u2014 Paid lawyer or representative already'] = v('pbLawyer');
   }
-  lines.push('');
-  lines.push('This is for: ' + v('who'));
-  lines.push('Best time to reach me: ' + v('when'));
-  lines.push('');
-  lines.push('Notes:');
-  lines.push(v('notes'));
-  var subject = 'Consultation Request — ' + v('name');
-  window.location.href = 'mailto:southernoakfw@gmail.com'
-    + '?subject=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(lines.join('\n'));
-  setTimeout(function(){
-    document.getElementById('registerForm').style.display = 'none';
-    var p = document.getElementById('afterSend');
-    p.style.display = 'block';
-    p.scrollIntoView({behavior:'smooth'});
-  }, 400);
+  fetch('https://formsubmit.co/ajax/southernoakfw@gmail.com', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify(data)
+  }).then(function(r){ return r.json(); }).then(function(res){
+    if (res && (res.success === true || res.success === 'true')){
+      form.style.display = 'none';
+      var p = document.getElementById('afterSend');
+      p.style.display = 'block';
+      p.scrollIntoView({behavior:'smooth'});
+    } else { throw new Error('send failed'); }
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = 'Send My Information';
+    err.style.display = 'block';
+  });
 });
 </script>
 </body>
